@@ -12,8 +12,17 @@ module.exports = {
         	cabin: ['Cabin', 'sans-serif'],
         	nohemi: ['NohemiBlack', 'sans-serif'],
       	},
+        boxShadow: {
+            'glacier-card': '0 2px 8px rgba(0,0,0,0.08)',
+        },
   		colors: {
   			glacier: {
+  				navy: '#042A33',
+  				teal: '#2A787C',
+  				crimson: '#8B0333',
+  				offwhite: '#F2F4F4',
+  				lightTeal: '#9CBBF0',
+  				warmGrey: '#6B7280',
   				primary: '#2A787C',
   				dark: '#042A33',
   				accent: '#8B0333',
