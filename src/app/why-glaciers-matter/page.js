@@ -1,108 +1,201 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Link from 'next/link';
+import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { FaExclamationTriangle, FaSearch, FaHistory, FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaChevronDown, FaTint, FaSearch, FaHistory } from "react-icons/fa";
 
-const LearnLanding = () => {
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const WhyGlaciersMatter = () => {
+    const sectionRef = useRef(null);
+    const triggerRef = useRef(null);
+
     const sections = [
         {
             title: "The Crisis",
             tag: "NARRATIVE",
-            icon: <FaExclamationTriangle />,
-            description: "Understanding the cascading reality of ice loss—from mountain peaks to coastal cities. The threat is not just water; it is survival.",
-            href: "/why-glaciers-matter/crisis"
+            icon: <FaTint />,
+            description: "The cascading reality of ice loss. The threat is not just water; it is a crisis of survival.",
+            href: "/why-glaciers-matter/crisis",
+            image: "/story/crisiss.jpg"
         },
         {
             title: "The Preparedness Gap",
             tag: "ANALYSIS",
             icon: <FaSearch />,
-            description: "Why glacier loss remains an orphaned crisis. Identifying the systemic gaps in imagination, policy, and data that prevent effective adaptation.",
-            href: "/why-glaciers-matter/gap"
+            description: "Identifying the systemic gaps in policy and data preventing effective global adaptation.",
+            href: "/why-glaciers-matter/gap",
+            image: "/story/gap.png"
         },
         {
             title: "The Decisive Decade",
             tag: "TIMELINE",
             icon: <FaHistory />,
-            description: "Why the years 2025–2034 are critical for the Hindu Kush Himalaya and the 2 billion people dependent on its ice.",
-            href: "/why-glaciers-matter/decade"
+            description: "The critical window for the HKH region and the 2 billion people dependent on its ice.",
+            href: "/why-glaciers-matter/decade",
+            image: "/story/hkh.jpg"
         }
     ];
 
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            // Horizontal scroll animation
+            const pin = gsap.fromTo(
+                sectionRef.current,
+                { translateX: 0 },
+                {
+                    translateX: "-200vw",
+                    ease: "none",
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: triggerRef.current,
+                        start: "top top",
+                        end: "+=6000 top",
+                        scrub: 2.5,
+                        pin: true,
+                        anticipatePin: 1
+                    }
+                }
+            );
+
+            // Hero reveal
+            gsap.from(".hero-content > *", {
+                opacity: 0,
+                y: 40,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            return () => pin.kill();
+        });
+
+        return () => ctx.revert();
+    }, []);
+
+    const scrollToFirst = () => {
+        const trigger = triggerRef.current;
+        if (trigger) {
+            window.scrollTo({
+                top: trigger.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
+        <div className="min-h-screen bg-glacier-navy font-cabin selection:bg-glacier-teal selection:text-white overflow-x-hidden">
             <Navbar />
             
-            {/*  Premium Hero Section: Why Glaciers Matter */}
-            <section className="relative min-h-[80vh] flex items-center pt-32 pb-24 px-6 md:px-12 bg-glacier-navy overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10">
+            {/* Premium Static Hero Wall */}
+            <section className="relative h-screen flex flex-col items-center pt-56 bg-glacier-navy px-6 overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-90">
                     <img 
-                        src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/hero-image.webp" 
-                        alt="Glacier Landscape" 
-                        className="object-cover w-full h-full grayscale opacity-30" 
+                        src="/story/crisis.png" 
+                        className="w-full h-full object-cover grayscale brightness-[0.4]"
+                        alt="Glacier background"
                     />
                 </div>
-
-                <div className="max-w-7xl mx-auto relative z-10 w-full">
+                <div className="absolute inset-0 bg-gradient-to-b from-glacier-navy via-glacier-navy/90 to-glacier-navy z-0" />
+                
+                <div className="relative z-10 max-w-5xl mx-auto text-center hero-content">
+                    <h1 className="text-3xl md:text-5xl lg:text-[7rem] font-nohemi text-white mb-10 leading-[0.85] tracking-tighter drop-shadow-2xl">
+                        Why Glaciers <br /> <span className="text-glacier-teal italic">Matter</span>
+                    </h1>
+                    <p className="text-lg md:text-xl lg:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-12 tracking-wide leading-relaxed">
+                        Protecting Earth&apos;s freshwater towers is the foundation of economic, social, and regional security for 2 billion people.
+                    </p>
+                    
                     <motion.div 
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-5xl"
+                        animate={{ y: [0, 15, 0] }}
+                        transition={{ repeat: Infinity, duration: 2.5 }}
+                        className="mt-20 flex flex-col items-center gap-6 group cursor-pointer"
+                        onClick={scrollToFirst}
                     >
-                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-widest text-[10px] uppercase mb-6 bg-glacier-teal/10 px-3 py-1 rounded-full border border-glacier-teal/20">The Evidence Base</span>
-                        <h1 className="text-6xl md:text-9xl font-nohemi text-white mb-10 leading-none tracking-tighter">Why Glaciers <br /> <span className="text-glacier-teal italic">Matter</span></h1>
-                        <p className="text-lg md:text-2xl text-glacier-warmGrey/80 leading-relaxed font-light font-cabin max-w-3xl">
-                            At the center of human survival sits a tower of ice. Protecting them is not just an environmental mandate; 
-                            it is the foundation of economic, social, and regional security for 2 billion people.
-                        </p>
+                        <span className="font-nohemi text-[10px] uppercase tracking-[1em] text-white/20 group-hover:text-glacier-teal transition-colors underline-offset-8">Explore The Journey</span>
+                        <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-glacier-teal group-hover:bg-glacier-teal/10 transition-all">
+                            <FaChevronDown className="text-xl text-white/30 group-hover:text-glacier-teal" />
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Narrative Pathways: Vertical Large Sections */}
-            <section className="py-32 px-6 md:px-12">
-                <div className="max-w-7xl mx-auto">
-                    <div className="space-y-12">
-                        {sections.map((section, idx) => (
-                            <Link key={idx} href={section.href} className="group block">
-                                <motion.div 
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                    className="bg-white p-12 md:p-20 rounded-[3.5rem] shadow-2xl shadow-glacier-navy/5 border border-white flex flex-col lg:flex-row items-center gap-16 group-hover:border-glacier-teal transition-all duration-500 relative overflow-hidden"
-                                >
-                                    <div className="absolute top-0 right-0 w-64 h-64 bg-glacier-teal/5 rounded-full -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000"></div>
-                                    
-                                    <div className="w-24 h-24 rounded-3xl bg-glacier-offwhite flex items-center justify-center text-glacier-teal text-4xl group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500 shadow-sm flex-shrink-0">
-                                        {section.icon}
-                                    </div>
-                                    
-                                    <div className="flex-1 text-center lg:text-left">
-                                        <div className="text-glacier-teal font-nohemi text-[10px] font-bold tracking-[0.2em] mb-4 uppercase">{section.tag}</div>
-                                        <h3 className="text-3xl md:text-6xl font-nohemi text-glacier-navy mb-6 tracking-tighter group-hover:text-glacier-teal transition-colors leading-[0.9]">{section.title}</h3>
-                                        <p className="text-xl md:text-2xl font-light text-glacier-navy/60 leading-relaxed font-cabin max-w-4xl mx-auto lg:mx-0">
-                                            {section.description}
-                                        </p>
-                                    </div>
+            {/* GSAP Horizontal Scroll Section */}
+            <div ref={triggerRef} className="overflow-hidden bg-glacier-navy">
+                <div ref={sectionRef} className="flex h-screen w-[300vw] relative">
+                    {sections.map((section, idx) => (
+                        <div key={idx} className="h-screen w-screen relative flex items-center justify-center overflow-hidden border-r border-white/5">
+                            {/* Background Media */}
+                            <div className="absolute inset-0 z-0">
+                                <img 
+                                    src={section.image} 
+                                    alt={section.title} 
+                                    className="w-full h-full object-cover brightness-[0.15]" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-transparent opacity-80" />
+                            </div>
 
-                                    <div className="w-20 h-20 rounded-full border border-glacier-navy/10 flex items-center justify-center text-glacier-navy group-hover:bg-glacier-teal group-hover:text-white group-hover:scale-110 transition-all shadow-xl shadow-transparent hover:shadow-glacier-teal/20">
-                                        <FaArrowRight className="text-2xl group-hover:translate-x-1 transition-transform" />
+                            <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 w-full grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-20">
+                                <div>
+                                    <div className="flex items-center gap-6 mb-8">
+                                        <div className="w-16 h-16 rounded-2xl bg-glacier-teal/20 backdrop-blur-3xl flex items-center justify-center text-glacier-teal text-2xl border border-glacier-teal/40">
+                                            {section.icon}
+                                        </div>
+                                        <span className="text-glacier-teal font-nohemi text-sm font-bold tracking-[0.6em] uppercase">{section.tag}</span>
                                     </div>
-                                </motion.div>
-                            </Link>
-                        ))}
-                    </div>
+                                    
+                                    <h2 className="text-4xl md:text-6xl lg:text-[5.5rem] font-nohemi text-white mb-8 leading-[0.85] tracking-tighter drop-shadow-xl">
+                                      {section.title}
+                                    </h2>
+                                    
+                                    <p className="text-lg md:text-xl text-white/40 font-light font-cabin mb-12 leading-relaxed max-w-xl">
+                                      {section.description}
+                                    </p>
+
+                                    <Link href={section.href} className="inline-flex items-center gap-6 bg-white text-glacier-navy px-12 py-5 rounded-full font-nohemi text-xs uppercase tracking-widest font-bold hover:bg-glacier-teal hover:text-white transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                                      Explore Chapter 
+                                      <FaArrowRight className="group-hover:translate-x-3 transition-transform" />
+                                    </Link>
+                                </div>
+                                
+                                <div className="hidden lg:block scale-90 md:scale-95">
+                                    <div className="relative aspect-[4/5] max-w-xs mx-auto rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl group">
+                                        <img src={section.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="" />
+                                        <div className="absolute inset-0 bg-glacier-navy/40 group-hover:bg-transparent transition-all duration-700" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Massive Background Tracking Number */}
+                            <div className="absolute left-10 md:left-24 bottom-10 md:bottom-24 z-0 pointer-events-none opacity-[0.02]">
+                                <span className="text-[12rem] md:text-[15rem] font-nohemi text-white leading-none select-none">
+                                    0{idx + 1}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
+            </div>
 
             <Footer />
         </div>
     );
 };
 
-export default LearnLanding;
+export default WhyGlaciersMatter;
+
+
+
+
+
+
+
+
+

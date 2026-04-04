@@ -59,23 +59,31 @@ export default function HowWeWorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`${engine.bgColor} text-white rounded-2xl p-8 flex flex-col shadow-lg transition-transform duration-500 hover:-translate-y-2`}
+              className={`${engine.bgColor} relative overflow-hidden text-white rounded-2xl p-8 flex flex-col shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group border border-transparent hover:border-white/10`}
             >
-              <div className="mb-6 border-b border-white/20 pb-6">
-                <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-nohemi tracking-widest uppercase mb-4">
+              {/* Subtle radial glow in the background on hover */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15),_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+
+              <div className="mb-6 pb-6 relative z-10">
+                <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-nohemi tracking-widest uppercase mb-4 transition-all duration-500 group-hover:bg-white/20 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-white/30 border border-transparent">
                   {engine.id}
                 </span>
                 <h4 className="text-2xl font-nohemi font-bold leading-tight mb-2">
                   {engine.title}
                 </h4>
-                <p className="text-white/80 font-cabin font-medium text-sm tracking-wide uppercase">
+                <p className="text-white/80 font-cabin font-medium text-sm tracking-wide uppercase transition-colors duration-500 group-hover:text-white">
                   {engine.subtitle}
                 </p>
+
+                {/* Animated Line Separator */}
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20 overflow-hidden">
+                   <div className="w-full h-full bg-white/70 -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out" />
+                </div>
               </div>
               
-              <div className="font-cabin text-base md:text-lg flex-grow">
-                <p className="font-bold mb-2">{engine.role}</p>
-                <p className="text-white/90 leading-relaxed">{engine.description}</p>
+              <div className="font-cabin text-base md:text-lg flex-grow relative z-10 pt-2">
+                <p className="font-bold mb-2 text-white transition-opacity duration-500 group-hover:opacity-100 opacity-90">{engine.role}</p>
+                <p className="text-white/80 leading-relaxed transition-colors duration-500 group-hover:text-white">{engine.description}</p>
               </div>
             </motion.div>
           ))}

@@ -58,35 +58,44 @@ const CrisisPage = () => {
         <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
             <Navbar />
 
-            {/* 🏔️ Premium Hero Section */}
-            <section className="relative min-h-[80vh] flex items-center pt-32 pb-24 px-6 md:px-12 bg-glacier-navy overflow-hidden">
+            {/* 🏔️ OG Cinematic Hero Section */}
+            <section className="relative h-screen flex items-center justify-center pt-32 bg-glacier-navy overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/img1.webp"
-                        alt="Background"
-                        className="object-cover w-full h-full opacity-20 scale-110 blur-[2px]"
+                    <img 
+                        src="/story/crisis.png" 
+                        alt="Crisis Background" 
+                        className="object-cover w-full h-full grayscale brightness-[0.25] scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-glacier-navy via-glacier-navy/90 to-transparent"></div>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/60"></div>
 
-                <div className="max-w-7xl mx-auto relative z-10 w-full">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="max-w-4xl"
+                <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1.2, ease: "easeOut" }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-glacier-teal/20 backdrop-blur-md border border-glacier-teal/30 rounded-full mb-8">
-                            <span className="w-2 h-2 rounded-full bg-glacier-teal animate-pulse"></span>
-                            <span className="text-glacier-teal font-nohemi tracking-widest uppercase text-[10px] font-bold">The Evidence Base</span>
-                        </div>
-                        <h1 className="text-5xl md:text-8xl font-nohemi text-white mb-8 leading-[0.95] tracking-tight">
+                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase mb-12 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-xl">
+                            Chapter 01: The Cascade
+                        </span>
+                        <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-nohemi text-white mb-10 leading-[0.8] tracking-tighter drop-shadow-2xl">
                             The Cascading <br />
-                            <span className="text-glacier-teal italic">Reality of Ice Loss</span>
+                            <span className="text-glacier-teal italic text-4xl md:text-8xl">Reality of Ice Loss</span>
                         </h1>
-                        <p className="text-lg md:text-2xl text-glacier-warmGrey/90 leading-relaxed max-w-2xl font-light">
+                        <p className="text-xl md:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-10">
                             Glacier risk is systemic risk. When water infrastructure destabilises, entire systems spiral.
                         </p>
+
+                        <motion.div 
+                            animate={{ y: [0, 15, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5 }}
+                            className="mt-20 flex flex-col items-center gap-4 text-white/20 cursor-pointer hover:text-glacier-teal transition-colors"
+                        >
+                            <span className="font-nohemi text-[10px] uppercase tracking-[0.3em]">Explore Impact</span>
+                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+                                <FaChartLine className="text-lg" />
+                            </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>

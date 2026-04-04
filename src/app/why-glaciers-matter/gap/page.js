@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { 
-    FaLightbulb, FaShieldAlt, FaFileAlt, FaDatabase, FaGraduationCap, FaSeedling, FaArrowRight, FaLink
+    FaLightbulb, FaShieldAlt, FaFileAlt, FaDatabase, FaGraduationCap, FaSeedling, FaArrowRight, FaLink, FaSearch
 } from 'react-icons/fa';
 
 const GapPage = () => {
@@ -47,57 +47,75 @@ const GapPage = () => {
         <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
             <Navbar />
             
-            {/* Premium Hero Section */}
-            <section className="relative min-h-[70vh] flex items-center pt-32 pb-24 px-6 md:px-12 bg-glacier-navy overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10">
+            {/* 🏔️ OG Cinematic Hero Section */}
+            <section className="relative h-screen flex items-center justify-center pt-32 bg-glacier-navy overflow-hidden">
+                <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/img2.webp" 
+                        src="/story/gap.png" 
                         alt="Gap Background" 
-                        className="object-cover w-full h-full scale-105 opacity-40 grayscale"
+                        className="object-cover w-full h-full grayscale brightness-[0.2] scale-105"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-glacier-navy/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/60"></div>
 
-                <div className="max-w-7xl mx-auto relative z-10 w-full text-center">
-                    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
-                        <h1 className="text-4xl md:text-8xl font-nohemi text-white mb-8 leading-[0.9] tracking-tighter">
+                <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                    >
+                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase mb-12 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-xl">
+                            Chapter 02: Preparedness
+                        </span>
+                        <h1 className="text-5xl md:text-[8rem] lg:text-[10rem] font-nohemi text-white mb-10 leading-[0.8] tracking-tighter drop-shadow-2xl">
                             The Orphaned <br />
-                            <span className="text-glacier-teal italic">Crisis</span>
+                            <span className="text-glacier-teal italic text-3xl md:text-8xl">Crisis</span>
                         </h1>
-                        <p className="text-lg md:text-2xl text-glacier-warmGrey/90 leading-relaxed max-w-4xl mx-auto font-light mb-12">
-                            Preparedness for glacier loss sits between climate mitigation, disaster response, and development. It belongs to none of them. This is why it has no clear owner — and why communities pay the price.
+                        <p className="text-xl md:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-10">
+                            Preparedness for glacier loss sits between climate mitigation, disaster response, and development.
                         </p>
+
+                        <motion.div 
+                            animate={{ y: [0, 15, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5 }}
+                            className="mt-20 flex flex-col items-center gap-4 text-white/20 cursor-pointer hover:text-glacier-teal transition-colors"
+                        >
+                            <span className="font-nohemi text-[10px] uppercase tracking-[0.3em]">Identify Gaps</span>
+                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+                                <FaSearch className="text-lg" />
+                            </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
 
             {/*  Analytical Grid: The 6 System Gaps in a 2x3 grid */}
-            <section className="py-32 px-6 md:px-12 bg-white flex justify-center text-center">
-                <div className="max-w-7xl mx-auto w-full">
-                    <div className="mb-24">
-                        <h2 className="text-3xl md:text-5xl font-nohemi text-glacier-navy tracking-tight leading-none mb-6">
+            <section className="py-12 px-6 md:px-12 bg-white flex justify-center text-center">
+                <div className="max-w-5xl mx-auto w-full">
+                    <div className="mb-10">
+                        <h2 className="text-2xl md:text-3xl font-nohemi text-glacier-navy tracking-tight leading-none">
                             The System <span className="text-glacier-teal italic">Gap</span>
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {gapCards.map((gap, idx) => (
                             <motion.div 
                                 key={idx}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 15 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="bg-glacier-offwhite p-12 rounded-[3rem] shadow-2xl shadow-glacier-navy/5 border border-white text-left group hover:bg-glacier-navy hover:text-white transition-all duration-500 relative overflow-hidden flex flex-col items-center text-center"
+                                transition={{ delay: idx * 0.05 }}
+                                className="bg-glacier-offwhite p-8 rounded-[2rem] shadow-2xl shadow-glacier-navy/5 border border-white text-left group hover:bg-glacier-navy hover:text-white transition-all duration-500 relative overflow-hidden flex flex-col items-center text-center"
                             >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-glacier-teal/10 rounded-full -mr-16 -mt-16 group-hover:scale-[3] transition-transform duration-1000"></div>
+                                <div className="absolute top-0 right-0 w-20 h-20 bg-glacier-teal/10 rounded-full -mr-10 -mt-10 group-hover:scale-[3] transition-transform duration-1000"></div>
 
                                 <div className="relative z-10 flex flex-col items-center">
-                                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-glacier-teal text-3xl mb-8 shadow-sm group-hover:bg-glacier-teal group-hover:text-white transition-colors duration-300">
+                                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-glacier-teal text-xl mb-4 shadow-sm group-hover:bg-glacier-teal group-hover:text-white transition-colors duration-300 border border-black/5">
                                         {gap.icon}
                                     </div>
-                                    <h3 className="text-2xl md:text-3xl font-nohemi text-glacier-navy mb-4 group-hover:text-white transition-colors">{gap.title}</h3>
-                                    <p className="text-glacier-navy/60 font-light font-cabin leading-relaxed group-hover:text-white/80 transition-colors">
+                                    <h3 className="text-lg md:text-xl font-nohemi text-glacier-navy mb-2 group-hover:text-white transition-colors">{gap.title}</h3>
+                                    <p className="text-xs font-light font-cabin leading-relaxed group-hover:text-white/80 transition-colors">
                                         {gap.desc}
                                     </p>
                                 </div>

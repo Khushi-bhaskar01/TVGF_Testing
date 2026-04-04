@@ -44,23 +44,44 @@ const DecadePage = () => {
         <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
             <Navbar />
             
-            {/* 🏔️ Premium Hero Section */}
-            <section className="relative min-h-[70vh] flex items-center pt-32 pb-24 px-6 md:px-12 bg-glacier-navy overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10">
+            {/* 🏔️ OG Cinematic Hero Section */}
+            <section className="relative h-screen flex items-center justify-center pt-32 bg-glacier-navy overflow-hidden">
+                <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/img5.webp" 
+                        src="/story/hkh.jpg" 
                         alt="Decade Background" 
-                        className="object-cover w-full h-full scale-105 opacity-40 grayscale"
+                        className="object-cover w-full h-full grayscale brightness-[0.3] scale-105"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-glacier-navy/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/60"></div>
 
-                <div className="max-w-7xl mx-auto relative z-10 w-full text-center">
-                    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
-                        <h1 className="text-4xl md:text-8xl font-nohemi text-white mb-8 leading-[0.9] tracking-tighter">
+                <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                    >
+                        <span className="inline-block text-glacier-crimson font-nohemi font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase mb-12 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-xl">
+                            The Critical Window
+                        </span>
+                        <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-nohemi text-white mb-10 leading-[0.8] tracking-tighter drop-shadow-2xl">
                             The Decisive <br />
                             <span className="text-glacier-crimson italic">Decade</span>
                         </h1>
+                        <p className="text-xl md:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-10">
+                            The years 2025–2034 represent the final threshold for cryospheric stability in the Hindu Kush Himalaya.
+                        </p>
+
+                        <motion.div 
+                            animate={{ y: [0, 15, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5 }}
+                            className="mt-20 flex flex-col items-center gap-4 text-white/20 cursor-pointer hover:text-glacier-crimson transition-colors"
+                        >
+                            <span className="font-nohemi text-[10px] uppercase tracking-[0.3em]">Critical Timeline</span>
+                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+                                <FaCalendarAlt className="text-lg" />
+                            </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
