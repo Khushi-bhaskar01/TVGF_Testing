@@ -1,18 +1,16 @@
 "use client";
-
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [desktopDropdown, setDesktopDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
-  const [isActive, setIsActive] = useState("/")
+  const [isActive, setIsActive] = useState("/");
 
   const pathname = usePathname();
   const navRef = useRef(null);
@@ -30,7 +28,8 @@ export default function Navbar() {
         { label: "Our Story", href: "/about/story", desc: "The SPACE framework and our mission." },
         { label: "Founder Story", href: "/about/founder", desc: "Anurag Maloo's survival and vision." },
         { label: "Team & Advisors", href: "/about/team", desc: "The people driving the movement." },
-        { label: "Partners & Networks", href: "/about/partners", desc: "Our institutional collaborators." }
+        { label: "Partners & Networks", href: "/about/partners", desc: "Our institutional collaborators." },
+        
       ]
     },
     {
@@ -89,12 +88,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setIsActive(pathname)
-  }, [pathname])
+    setIsActive(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-
       if (navRef.current && !navRef.current.contains(event.target)) {
         setDesktopDropdown(null);
         setMobileDropdown(null);
@@ -114,7 +112,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex justify-between h-14 items-center">
-
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -122,7 +119,7 @@ export default function Navbar() {
               alt="Company Logo"
               width={140}
               height={48}
-              className={`h-8 sm:h-10 w-auto object-contain rounded-lg transition-all duration-300 brightness-0${isTransparent ? "" : ""}`}
+              className="h-8 sm:h-10 w-auto object-contain rounded-lg transition-all duration-300"
               priority
             />
           </Link>
@@ -137,11 +134,10 @@ export default function Navbar() {
                   onMouseEnter={() => setDesktopDropdown(page.name)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
-                  {/* Main Nav Link */}
                   <Link
                     href={page.href}
                     className={`flex items-center gap-1 font-medium text-xs md:text-[13px] lg:text-sm transition-colors font-nohemi h-full 
-                      ${isTransparent ? "" : "text-glacier-navy hover:text-glacier-teal"}
+                      ${isTransparent ? "text-white" : "text-glacier-navy hover:text-glacier-teal"}
                       ${isActive === page.href ? "underline decoration-2 underline-offset-4 text-glacier-teal" : ""}`}
                   >
                     {page.name}
@@ -155,7 +151,6 @@ export default function Navbar() {
                     )}
                   </Link>
 
-                  {/* Dropdown */}
                   <AnimatePresence>
                     {page.subpages?.length > 0 && desktopDropdown === page.name && (
                       <motion.div
@@ -192,7 +187,6 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTAs */}
             <div className={`flex items-center gap-3 border-l pl-6 ${isTransparent ? 'border-white/20' : 'border-gray-200'}`}>
               <Link
                 href="/get-involved/partner"
@@ -213,7 +207,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => {
@@ -229,7 +222,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -270,7 +262,6 @@ export default function Navbar() {
                     </Link>
                   )}
 
-                  {/* Mobile Accordion SubPages */}
                   <AnimatePresence>
                     {mobileDropdown === link.name && link.subpages?.length > 0 && (
                       <motion.div
@@ -300,13 +291,10 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
               ))}
-
-              {/* Mobile CTAs */}
               <div className="pt-4 flex flex-col gap-3 border-t border-white/20 mt-4">
                 <PartnerWithUsButton onclick={() => setIsOpen(false)} />
                 <JoinAsGlacierGuardianButton onClick={() => setIsOpen(false)} />
               </div>
-
             </div>
           </motion.div>
         )}
@@ -315,17 +303,17 @@ export default function Navbar() {
   );
 }
 
-export const JoinAsGlacierGuardianButton = ({ onclick }) => {
+export const JoinAsGlacierGuardianButton = ({ onClick }) => {
   return (
     <Link
       href="/get-involved/glacier-guardian"
-      onClick={onclick}
+      onClick={onClick}
       className="w-full flex items-center justify-center px-4 py-2 bg-glacier-teal text-white hover:bg-glacier-teal/90 text-sm font-medium rounded-md transition-colors font-cabin"
     >
       Join as Glacier Guardian
     </Link>
-  )
-}
+  );
+};
 
 export const PartnerWithUsButton = ({ onclick }) => {
   return (
@@ -336,5 +324,5 @@ export const PartnerWithUsButton = ({ onclick }) => {
     >
       Partner With Us
     </Link>
-  )
-}
+  );
+};
