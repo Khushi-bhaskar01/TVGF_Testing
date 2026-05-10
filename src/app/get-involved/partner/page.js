@@ -97,14 +97,10 @@ export default function PartnerPage() {
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFA] text-glacier-navy">
       <Navbar />
 
-      <main className="pt-32">
+      <main className="pt-20">
         {/* Hero Section */}
         <section className="px-6 md:px-20 max-w-7xl mx-auto mb-24">
           <div className="max-w-4xl">
-            <Link href="/get-involved" className="hero-el inline-flex items-center gap-2 mb-12 text-xs font-cabin font-bold tracking-widest uppercase text-glacier-teal hover:translate-x-[-4px] transition-transform">
-              <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4"><path d="M15 10H5M10 15l-5-5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              Back to Pathways
-            </Link>
             <h1 className="hero-el font-nohemi text-5xl md:text-8xl font-bold leading-[0.95] mb-8 tracking-tight">
               Partner <br /><span className="text-glacier-teal">With Us.</span>
             </h1>
@@ -133,67 +129,39 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        {/* Inquiry Form */}
+        {/* Inquiry Redirect - REDESIGNED FOR GOOGLE FORM INTEGRATION */}
         <section ref={formRef} className="px-6 md:px-20 max-w-7xl mx-auto mb-40">
-          <div className="grid lg:grid-cols-2 gap-20 bg-white p-12 md:p-20 rounded-[40px] border border-gray-100 shadow-2xl overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-glacier-teal/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
+          <div className="bg-white p-12 md:p-24 rounded-[4rem] border border-gray-100 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] overflow-hidden relative text-center">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glacier-teal/5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
             
-            <div className="relative z-10">
-              <h2 className="font-nohemi text-4xl md:text-5xl font-bold mb-8">Start a <span className="text-glacier-teal">Conversation.</span></h2>
-              <p className="font-cabin text-lg text-glacier-navy/70 mb-12 leading-relaxed">
-                Our partnership process is structured but deeply personal. Fill out the inquiry form, and a member of our leadership team will reach out.
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <span className="inline-block text-glacier-teal font-nohemi font-bold text-[10px] uppercase tracking-[0.4em] mb-8 bg-glacier-offwhite px-6 py-2 rounded-full border border-glacier-navy/5 shadow-sm">
+                Next Steps
+              </span>
+              <h2 className="font-nohemi text-5xl md:text-7xl font-bold mb-10 tracking-tighter leading-none">Start a <span className="text-glacier-teal italic">Conversation.</span></h2>
+              <p className="font-cabin text-xl text-glacier-navy/70 mb-14 leading-relaxed font-light">
+                Our partnership process is structured but deeply personal. Please fill out our official partnership inquiry form, and a member of our leadership team will reach out to discuss how we can align our vision with yours.
               </p>
-              <div className="pt-10 border-t border-gray-100">
-                <p className="font-cabin text-[10px] uppercase font-bold tracking-[0.2em] mb-4 text-glacier-navy/40">Direct Inquiry</p>
-                <p className="font-cabin text-xl font-medium">
-                  For urgent or senior inquiries, write directly to: <br />
-                  <a href="mailto:partnerships@thevoiceofglaciers.org" className="text-glacier-teal underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">partnerships@thevoiceofglaciers.org</a>
-                </p>
+              
+              <div className="flex flex-col items-center gap-10">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-16 py-6 bg-glacier-navy text-white rounded-full font-nohemi font-bold tracking-[0.2em] uppercase text-xs hover:bg-glacier-teal transition-all duration-500 shadow-2xl hover:-translate-y-1"
+                >
+                  Open Inquiry Form
+                </a>
+
+                <div className="pt-10 border-t border-gray-100 w-full">
+                  <p className="font-cabin text-[10px] uppercase font-bold tracking-[0.3em] mb-6 text-glacier-navy/30">Direct Inquiry</p>
+                  <p className="font-cabin text-xl md:text-2xl font-light text-glacier-navy/60 leading-relaxed">
+                    For urgent or senior leadership inquiries, write directly to: <br />
+                    <a href="mailto:thevoiceofglaciers@gmail.com" className="text-glacier-teal font-bold underline decoration-2 underline-offset-8 hover:opacity-80 transition-all">thevoiceofglaciers@gmail.com</a>
+                  </p>
+                </div>
               </div>
             </div>
-
-            <form className="relative z-10 space-y-6 font-cabin">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Full Name</label>
-                  <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Name" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Organisation</label>
-                  <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Organisation" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Type of Partnership</label>
-                <div className="relative">
-                  <select className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white appearance-none">
-                    <option>Knowledge Partner</option>
-                    <option>Funding & Resource Partner</option>
-                    <option>Community Partner</option>
-                    <option>Policy & Advocacy Partner</option>
-                    <option>Storytelling & Media Partner</option>
-                  </select>
-                  <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                    <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4"><path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Geography of Work</label>
-                <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Regions you operate in" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Message / Intent</label>
-                <textarea rows="4" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="How do you envision our collaboration?"></textarea>
-              </div>
-
-              <button className="w-full py-5 bg-glacier-navy text-white rounded-xl font-bold tracking-[0.1em] uppercase text-sm hover:bg-glacier-teal transition-all duration-500 shadow-xl shadow-glacier-navy/20 hover:shadow-glacier-teal/20">
-                Submit Inquiry
-              </button>
-            </form>
           </div>
         </section>
       </main>

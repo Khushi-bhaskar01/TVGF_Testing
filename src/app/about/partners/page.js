@@ -68,30 +68,8 @@ export default function Partners() {
             <section className="py-32 px-6 md:px-12 bg-white relative">
                 <div className="max-w-7xl mx-auto">
 
-                    {/* Official WEF Recognition Callout - Highly Prominent */}
-                    <div className="mb-48 text-center max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="bg-white border border-glacier-navy/5 p-16 md:p-20 rounded-[3rem] text-glacier-navy relative overflow-hidden group shadow-[0_40px_80px_-20px_rgba(0,128,128,0.15)]"
-                        >
-                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-glacier-teal opacity-5 rounded-full -mr-32 -mt-32 backdrop-blur-3xl"></div>
-
-                            {/* Official WEF Visual Mark */}
-                            <div className="mx-auto mb-10 flex justify-center relative z-10 w-full">
-                                <Image src="/partners/WEF.svg" alt="WEF Logo" width={140} height={140} className="w-auto h-28 md:h-32 object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-xl" />
-                            </div>
-
-                            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-glacier-teal mb-4 font-nohemi">Official Recognition</p>
-                            <h2 className="text-4xl md:text-6xl font-nohemi mb-6 tracking-tight leading-none text-glacier-navy">Young Global <span className="text-glacier-teal italic">Leader</span></h2>
-                            <p className="text-sm md:text-base font-light text-glacier-navy/50 tracking-[0.2em] uppercase font-nohemi">World Economic Forum — Class of 2025</p>
-                        </motion.div>
-                    </div>
-
                     {/* Institutional Partners Grid with Descriptions */}
-                    <div className="mb-48 border-t border-glacier-navy/5 pt-32">
+                    <div className="mb-48 pt-32">
                         <div className="text-center mb-20">
                             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-glacier-teal font-nohemi px-4 py-1.5 border border-glacier-teal/20 rounded-full mb-6 inline-block">Collaborators</span>
                             <h2 className="text-4xl md:text-5xl font-nohemi text-glacier-navy tracking-tight">Institutional <span className="text-glacier-teal italic">Partners</span></h2>
@@ -128,41 +106,8 @@ export default function Partners() {
                             ))}
                         </div>
                     </div>
-
-                    {/* Affiliations & Global Networks */}
-                    <div className="border-t border-glacier-navy/5 pt-32">
-                        <div className="text-center mb-20">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-glacier-teal font-nohemi px-4 py-1.5 border border-glacier-teal/20 rounded-full mb-6 inline-block">Global Ecosystem</span>
-                            <h2 className="text-4xl md:text-5xl font-nohemi text-glacier-navy tracking-tight">Affiliations & <span className="text-glacier-teal italic">Networks</span></h2>
-                        </div>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-                            {networks.map((net, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05, duration: 0.5 }}
-                                    className="flex flex-col items-center group cursor-default"
-                                >
-                                    <div className="w-full aspect-[4/3] bg-white rounded-[1.5rem] border border-glacier-navy/5 flex items-center justify-center shadow-sm shadow-glacier-navy/5 p-4 group-hover:bg-white group-hover:border-glacier-teal/20 group-hover:shadow-xl transition-all duration-500 mb-4 text-glacier-teal/20 group-hover:text-glacier-teal relative overflow-hidden">
-                                        <Image 
-                                            src={net.placeholder} 
-                                            alt={net.name} 
-                                            width={140} 
-                                            height={100} 
-                                            className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                        />
-                                    </div>
-                                    <h4 className="text-[10px] md:text-xs font-nohemi text-glacier-navy/70 text-center tracking-widest uppercase font-bold">{net.name}</h4>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
             </section>
-
             <Footer />
         </div>
     );

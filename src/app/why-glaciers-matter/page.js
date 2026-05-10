@@ -24,7 +24,7 @@ const WhyGlaciersMatter = () => {
             icon: <FaTint />,
             description: "The cascading reality of ice loss. The threat is not just water; it is a crisis of survival.",
             href: "/why-glaciers-matter/crisis",
-            image: "/story/crisiss.jpg"
+            image: "/story/1.jpg"
         },
         {
             title: "The Preparedness Gap",
@@ -160,7 +160,7 @@ const WhyGlaciersMatter = () => {
                                     </p>
 
                                     <Link href={section.href} className="inline-flex items-center gap-6 bg-white text-glacier-navy px-12 py-5 rounded-full font-nohemi text-xs uppercase tracking-widest font-bold hover:bg-glacier-teal hover:text-white transition-all duration-500 group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                                      Explore Chapter 
+                                      Explore 
                                       <FaArrowRight className="group-hover:translate-x-3 transition-transform" />
                                     </Link>
                                 </div>

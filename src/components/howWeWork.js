@@ -31,7 +31,7 @@ export default function HowWeWorkSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-24 px-6">
+    <section className="w-full bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Headings */}
@@ -40,7 +40,7 @@ export default function HowWeWorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-sm font-nohemi text-glacier-teal tracking-widest uppercase mb-4">
             Our Approach

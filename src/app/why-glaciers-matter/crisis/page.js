@@ -1,20 +1,69 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaChartLine, FaUsers, FaLeaf, FaGlobe, FaCubes } from 'react-icons/fa';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CrisisPage = () => {
-    // 1. The Cascade Effect (visual flow diagram)
-    const actualCascade = [
-        "Glacier Loss",
-        "Water Insecurity",
-        "Food & Agri Crisis",
-        "Energy Volatility",
-        "Public Health Risk",
-        "Economic Disruption"
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const cards = gsap.utils.toArray('.cascade-card');
+        cards.forEach((card, i) => {
+            gsap.fromTo(card, 
+                { opacity: 0, x: i % 2 === 0 ? -30 : 30 },
+                { 
+                    opacity: 1, 
+                    x: 0,
+                    duration: 1,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    }, []);
+    // 1. The Cascade Effect (detailed data)
+    const detailedCascade = [
+        {
+            title: "Accelerated Warming",
+            data: "3x faster than global average.",
+            desc: "The Cryosphere is warming three times faster than the global average, signaling an urgent climate crisis."
+        },
+        {
+            title: "Projected Melt",
+            data: "50% melt by 2100.",
+            desc: "Half of the world's glaciers could disappear by 2100, threatening ecosystems, water supplies, and sea levels."
+        },
+        {
+            title: "Himalayan Decline",
+            data: "40% ice volume lost since 2000.",
+            desc: "Himalayan glaciers are rapidly losing volume, fundamentally destabilising regional water systems."
+        },
+        {
+            title: "Water Insecurity",
+            data: "Over 2 billion lives at risk.",
+            desc: "More than 2 billion people rely on glacier-fed rivers like the Ganges, Indus, and Yangtze for water and food."
+        },
+        {
+            title: "Glacial Flood Threat",
+            data: "Increasing GLOF frequency.",
+            desc: "Glacial lake outburst floods (GLOFs) are putting lives, downstream infrastructure, and economies at extreme risk."
+        },
+        {
+            title: "Albedo Loss",
+            data: "Reduced Earth's reflectivity.",
+            desc: "Melting glaciers reduce the planet's reflectivity, causing Earth to absorb more heat and warm even faster."
+        }
     ];
 
     // 2. Four impact quadrants with exact brief statistics
@@ -82,118 +131,71 @@ const CrisisPage = () => {
                             The Cascading <br />
                             <span className="text-glacier-teal italic text-4xl md:text-8xl">Reality of Ice Loss</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-10">
-                            Glacier risk is systemic risk. When water infrastructure destabilises, entire systems spiral.
-                        </p>
-
-                        <motion.div 
-                            animate={{ y: [0, 15, 0] }}
-                            transition={{ repeat: Infinity, duration: 2.5 }}
-                            className="mt-20 flex flex-col items-center gap-4 text-white/20 cursor-pointer hover:text-glacier-teal transition-colors"
-                        >
-                            <span className="font-nohemi text-[10px] uppercase tracking-[0.3em]">Explore Impact</span>
-                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
-                                <FaChartLine className="text-lg" />
-                            </div>
-                        </motion.div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* 🏗️ The Cascade Effect Flow */}
-            <section className="py-32 px-6 md:px-12 bg-glacier-offwhite relative overflow-hidden">
-                {/* Background Decorative Gradient */}
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-glacier-teal/5 blur-[100px] rounded-full -translate-y-1/4 translate-x-1/3 pointer-events-none"></div>
+            {/* 🏗️ The Cascade Effect Flow - Refined & Compact with GSAP */}
+            <section ref={containerRef} id="cascade-section" className="py-20 px-6 md:px-12 bg-glacier-offwhite relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-glacier-teal/5 blur-[120px] rounded-full -translate-y-1/4 translate-x-1/3 pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="mb-20 text-center">
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-nohemi text-glacier-navy leading-none mb-6">
-                            The Cascade <span className="text-glacier-teal italic">Effect</span>
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <div className="mb-16 text-center">
+                        <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-glacier-teal mb-4 block font-nohemi">The Systemic Breakdown</span>
+                        <h2 className="text-4xl md:text-6xl font-nohemi text-glacier-navy leading-[0.9] tracking-tighter mb-6">
+                            The Cascading <br /> <span className="text-glacier-teal italic">Realities</span>
                         </h2>
-                        <p className="text-glacier-navy/60 max-w-2xl text-lg md:text-xl font-light mx-auto">
-                            A visual sequence of systemic breakdown. As the ice vanishes, the dominoes fall across human and ecological security.
-                        </p>
                     </div>
 
-                    {/* The Cascade Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative pb-12 lg:pb-32">
-                        
-                        {/* Connecting Line (Desktop) */}
-                        <div className="hidden lg:block absolute top-[30%] left-[10%] w-[80%] h-[2px] bg-gradient-to-r from-transparent via-glacier-teal to-glacier-crimson z-0 opacity-40 blur-[1px]"></div>
+                    <div className="space-y-4 relative">
+                        {/* Vertical Progress Line */}
+                        <div className="absolute left-[2.45rem] md:left-1/2 top-0 w-[1px] h-full bg-glacier-navy/10 -translate-x-1/2 hidden md:block"></div>
 
-                        {actualCascade.map((step, index) => {
-                            // Creates a physical "Staircase/Cascade" layout on desktop
-                            const cascadeOffset = 
-                                index % 3 === 0 ? "lg:translate-y-0" : 
-                                index % 3 === 1 ? "lg:translate-y-16" : 
-                                "lg:translate-y-32";
+                        {detailedCascade.map((step, index) => (
+                            <div
+                                key={index}
+                                className={`cascade-card relative flex flex-col md:flex-row gap-6 md:gap-12 items-center opacity-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                            >
+                                {/* Marker */}
+                                <div className="z-10 w-12 h-12 rounded-2xl bg-white flex-shrink-0 flex items-center justify-center text-glacier-teal font-nohemi text-lg border border-glacier-navy/5 shadow-lg group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500">
+                                    {index + 1}
+                                </div>
 
-                            return (
-                                <motion.div
-                                    key={index}
-                                    initial={{ y: 50, opacity: 0 }}
-                                    whileInView={{ y: 0, opacity: 1 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ 
-                                        duration: 0.8, 
-                                        delay: index * 0.15, 
-                                        ease: "easeOut" 
-                                    }}
-                                    className={`relative bg-white rounded-[2rem] p-8 md:p-10 border border-glacier-navy/5 shadow-xl shadow-glacier-navy/5 group hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 transition-all duration-500 z-10 ${cascadeOffset}`}
-                                >
-                                    {/* Premium Watermark Numbering */}
-                                    <div className="absolute -bottom-4 -right-2 text-[140px] font-nohemi font-bold text-glacier-navy/[0.03] group-hover:text-glacier-teal/[0.08] transition-colors duration-700 pointer-events-none leading-none select-none">
-                                        0{index + 1}
+                                {/* Content Card */}
+                                <div className={`flex-1 bg-white p-8 rounded-[2rem] border border-glacier-navy/5 shadow-xl shadow-glacier-navy/5 group hover:border-glacier-teal/20 transition-all duration-500 w-full ${index % 2 !== 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                    <div className={`flex flex-col ${index % 2 !== 0 ? 'md:items-end' : 'md:items-start'}`}>
+                                        <h3 className="font-nohemi text-2xl md:text-3xl text-glacier-navy mb-2 group-hover:text-glacier-teal transition-colors tracking-tight leading-none">{step.title}</h3>
+                                        <p className="text-glacier-crimson font-bold text-xs mb-3 uppercase tracking-wider bg-glacier-crimson/5 px-3 py-1 rounded-full w-fit">{step.data}</p>
                                     </div>
-
-                                    {/* Card Content */}
-                                    <div className="relative z-10 flex flex-col h-full min-h-[160px] justify-between">
-                                        <div className="flex justify-between items-start">
-                                            {/* Animated Directional Icon */}
-                                            <div className="w-12 h-12 rounded-full bg-glacier-offwhite border border-glacier-navy/5 flex items-center justify-center text-glacier-navy/40 group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500 shadow-sm">
-                                                <FaArrowRight className="rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                                            </div>
-                                            
-                                            <span className="text-[10px] font-bold uppercase tracking-widest text-glacier-crimson/70 group-hover:text-glacier-crimson transition-colors">
-                                                Phase {index + 1}
-                                            </span>
-                                        </div>
-                                        
-                                        <h3 className="font-nohemi text-2xl md:text-3xl text-glacier-navy font-bold leading-tight mt-12 group-hover:text-glacier-teal transition-colors duration-300">
-                                            {step}
-                                        </h3>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                                    <p className="text-glacier-navy/60 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto md:mx-0 font-cabin">{step.desc}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* 📣 Key Callout */}
-            <section className="py-32 px-6 bg-glacier-crimson relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
-
+            <section className="py-20 px-6 bg-glacier-accent relative overflow-hidden">
                 <div className="max-w-5xl mx-auto relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                     >
-                        <FaCubes className="text-white/20 text-6xl mx-auto mb-8" />
-                        <h2 className="text-3xl md:text-5xl font-nohemi text-white leading-[1.1] tracking-tight">
+                        <FaCubes className="text-glacier-teal/20 text-6xl mx-auto mb-8" />
+                        <h2 className="text-3xl md:text-5xl font-nohemi text-white font-normal leading-tight tracking-tight max-w-5xl mx-auto">
                             &quot;Glacier Risk Is Systemic Risk.<br />
-                            <span className="text-white/80 italic font-light">When water infrastructure destabilises, entire systems spiral.</span>&quot;
+                            <span className="italic">When water infrastructure destabilises, entire systems spiral.&quot;</span>
                         </h2>
                     </motion.div>
                 </div>
             </section>
 
             {/* 🔳 Impact Quadrants */}
-            <section className="py-32 px-6 md:px-12 bg-glacier-offwhite">
+            <section className="py-20 px-6 md:px-12 bg-glacier-offwhite">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-10">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {impactQuadrants.map((quad, index) => (
                             <motion.div
                                 key={index}
@@ -201,20 +203,20 @@ const CrisisPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group bg-white p-12 rounded-[2.5rem] shadow-2xl shadow-glacier-navy/5 border border-white relative overflow-hidden"
+                                className="group bg-white p-10 rounded-[2rem] shadow-2xl shadow-glacier-navy/5 border border-white relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-glacier-teal/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
 
                                 <div className="flex items-start gap-6 relative z-10">
-                                    <div className="w-16 h-16 rounded-2xl bg-glacier-offwhite flex items-center justify-center text-glacier-teal text-3xl group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500 shadow-sm">
+                                    <div className="w-14 h-14 rounded-2xl bg-glacier-offwhite flex items-center justify-center text-glacier-teal text-2xl group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500 shadow-sm">
                                         {quad.icon}
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="text-2xl md:text-3xl font-nohemi text-glacier-navy mb-8 leading-none">{quad.title}</h3>
-                                        <ul className="space-y-4">
+                                        <h3 className="text-xl md:text-2xl font-nohemi text-glacier-navy mb-6 leading-none">{quad.title}</h3>
+                                        <ul className="space-y-3">
                                             {quad.content.map((item, i) => (
-                                                <li key={i} className="flex items-start gap-4 text-glacier-navy/70 leading-relaxed group-hover:text-glacier-navy transition-colors">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-glacier-teal mt-2.5 flex-shrink-0"></div>
+                                                <li key={i} className="flex items-start gap-3 text-glacier-navy/70 leading-relaxed group-hover:text-glacier-navy transition-colors">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-glacier-teal mt-2 flex-shrink-0"></div>
                                                     <span className="text-sm md:text-base font-light">{item}</span>
                                                 </li>
                                             ))}
@@ -227,8 +229,19 @@ const CrisisPage = () => {
                 </div>
             </section>
 
+            {/*
+            <section className="py-24 px-6 bg-white text-center">
+                <div className="max-w-4xl mx-auto">
+                    <p className="font-cabin text-xl md:text-3xl text-glacier-navy/80 italic leading-relaxed font-light">
+                        &quot;Glaciers store the world&apos;s freshwater, cool the planet, and sustain life.<br className="hidden md:block" />
+                        Their rapid disappearance is not just a climate crisis — it&apos;s a life crisis.<br className="hidden md:block" />
+                        <span className="font-nohemi font-bold text-glacier-teal not-italic mt-6 block text-lg tracking-widest uppercase">The Voice of Glaciers Foundation exists to protect what remains, before silence replaces ice.</span>&quot;
+                    </p>
+                </div>
+            </section> */}
+
             {/* Navigation Strip to Next Section */}
-            <div className="bg-white py-12 border-t border-glacier-navy/5 px-6">
+            <div className="bg-white py-10 border-t border-glacier-navy/5 px-6">
                 <div className="max-w-7xl mx-auto flex justify-end">
                     <a href="/why-glaciers-matter/gap" className="flex items-center gap-4 text-glacier-navy hover:text-glacier-teal transition-colors font-nohemi font-bold tracking-widest text-[10px] uppercase">
                         <span>Next: The Preparedness Gap</span>

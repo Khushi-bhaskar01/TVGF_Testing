@@ -27,7 +27,7 @@ export default function Navbar() {
         { label: "Our Story", href: "/about/story", desc: "The SPACE framework and our mission." },
         { label: "Founder Story", href: "/about/founder", desc: "Anurag Maloo's survival and vision." },
         { label: "Team & Advisors", href: "/about/team", desc: "The people driving the movement." },
-        { label: "Partners & Networks", href: "/about/partners", desc: "Our institutional collaborators." },
+        { label: "Partners", href: "/partners", desc: "Our institutional collaborators." },
 
       ]
     },
@@ -45,11 +45,10 @@ export default function Navbar() {
       href: "/programs",
       subpages: [
         { label: "Glacier Dialogues", href: "/programs/glacier-dialogues", desc: "Monthly policy dialogue series." },
+        { label: "Upcoming Dialogue", href: "/programs/glacier-dialogues", desc: "Join our next live dialogue." },
         { label: "Glacier Guardians Fellowship", href: "/programs/glacier-guardians-fellowship", desc: "Empowering youth climate leaders." },
-        { label: "GlacierX Festival", href: "/programs/glacierx-festival", desc: "Convergence of science, art, and policy." },
-        { label: "Time Markers", href: "/programs/time-markers", desc: "Installations at historical recession lines." },
-        { label: "HCSN", href: "/programs/hcsn", desc: "Himalayan Climate Sentinels Network." },
-        { label: "GlacierX Platform", href: "/programs/glacierx-platform", desc: "Open Digital Public Good infrastructure." }
+        { label: "Himalayan Climate Sentinels Network", href: "/programs/hcsn", desc: "Community-powered climate intelligence." },
+        { label: "India Glacier Watch", href: "/programs/glacierx-platform", desc: "Open Digital Public Good infrastructure." }
       ]
     },
     {
@@ -57,7 +56,7 @@ export default function Navbar() {
       href: "/media",
       subpages: [
         { label: "Press & News", href: "/media/press", desc: "Latest coverage and announcements." },
-        { label: "Glacier Dialogues Sessions", href: "/media/sessions", desc: "Archive of past dialogues." },
+        { label: "Recent Sessions", href: "/media/sessions", desc: "Archive of past dialogues." },
         { label: "Publications & Reports", href: "/media/publications", desc: "Research and policy briefs." },
         { label: "Photography & Film", href: "/media/visual", desc: "Visuals from the frontlines." }
       ]
@@ -111,18 +110,21 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`fixed w-full z-50 transition-all duration-300 font-cabin rounded-b-xl ${isTransparent ? "bg-transparent py-4 border-b border-white/20" : "bg-white shadow-md py-2 border-b border-gray-100"}`}
+      className={`fixed w-full z-50 transition-all duration-500 font-cabin rounded-b-xl 
+        ${isTransparent 
+          ? "bg-transparent py-2 border-b border-white/10" 
+          : "bg-white/95 hover:bg-white/80 backdrop-blur-md shadow-sm py-1 border-b border-gray-100"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex justify-between h-14 items-center gap-4">
+        <div className="flex justify-between h-12 items-center gap-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/comapny-dark-logo.webp"
               alt="Company Logo"
-              width={140}
-              height={48}
-              className={`h-8 sm:h-10 w-auto object-contain rounded-lg transition-all duration-300 brightness-0`}
+              width={120}
+              height={40}
+              className={`h-7 sm:h-8 w-auto object-contain rounded-lg transition-all duration-300 brightness-0 ${isTransparent ? "invert" : ""}`}
               priority
             />
           </Link>
@@ -133,15 +135,15 @@ export default function Navbar() {
               {structuredPages.map((page) => (
                 <div
                   key={page.name}
-                  className="relative h-14 flex items-center"
+                  className="relative h-12 flex items-center"
                   onMouseEnter={() => setDesktopDropdown(page.name)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
                   <Link
                     href={page.href}
-                    className={`flex items-center gap-1 font-medium text-xs md:text-[13px] lg:text-sm transition-colors font-nohemi h-full text-center
-                      ${isTransparent ? "" : "text-glacier-navy hover:text-glacier-teal"}
-                      ${isLinkActive(page.href) ? "text-glacier-teal underline decoration-2 underline-offset-4" : "text-glacier-navy hover:text-glacier-teal"}`}
+                    className={`flex items-center gap-1 font-medium text-[11px] lg:text-[13px] transition-colors font-nohemi h-full text-center
+                      ${isTransparent ? "text-white hover:text-white/80" : "text-glacier-navy hover:text-glacier-teal"}
+                      ${isLinkActive(page.href) ? "text-glacier-teal underline decoration-2 underline-offset-4" : ""}`}
                   >
                     {page.name}
                     {page.subpages?.length > 0 && (
@@ -162,7 +164,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className={`fixed left-0 w-full bg-white text-black shadow-lg border-t border-gray-100 z-50 
-                          ${isTransparent ? "top-[88px]" : "top-[72px]"}`}
+                          ${isTransparent ? "top-[64px]" : "top-[56px]"}`}
                       >
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
@@ -192,9 +194,9 @@ export default function Navbar() {
             </div>
 
             <div className={`flex items-center gap-3 border-l pl-6 ${isTransparent ? 'border-white/20' : 'border-gray-200'}`}>
-              <Link
+                <Link
                 href="/get-involved/partner"
-                className={`hidden lg:flex items-center justify-center text-center px-4 py-2 border-2 text-sm font-medium rounded-md transition-colors font-cabin backdrop-blur-sm
+                className={`hidden lg:flex items-center justify-center text-center px-3 py-1.5 border-2 text-[11px] font-medium rounded-md transition-colors font-cabin backdrop-blur-sm
                   ${isTransparent
                     ? "border-white text-white hover:bg-white hover:text-glacier-navy"
                     : "border-glacier-teal text-glacier-navy hover:bg-glacier-teal hover:text-white"
@@ -204,7 +206,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/get-involved/glacier-guardian"
-                className="flex items-center justify-center text-center px-4 py-2 bg-glacier-navy text-white hover:bg-glacier-navy/90 text-sm font-medium rounded-md transition-colors font-cabin"
+                className="flex items-center justify-center text-center px-3 py-1.5 bg-glacier-navy text-white hover:bg-glacier-navy/90 text-[11px] font-medium rounded-md transition-colors font-cabin"
               >
                 Join as Glacier Guardian
               </Link>

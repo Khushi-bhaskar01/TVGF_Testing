@@ -40,7 +40,7 @@ export default function HomePage() {
       {/* Hero Banner */}
       <HeroSection />
 
-      <section className="w-full bg-glacier-navy py-20 px-6 relative overflow-hidden">
+      <section className="w-full bg-glacier-navy py-12 px-6 relative overflow-hidden">
         {/* Subtle youthfulness gradient */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glacier-teal/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
@@ -97,11 +97,11 @@ export default function HomePage() {
       {/* section 5 */}
       <ProgramsSnapshot />
 
-      {/* section 6 */}
+      {/* Institutional Partners */}
       <InstitutionalPartners />
 
       {/* Movement CTA Strip */}
-      <section className="w-full bg-glacier-navy py-24 px-6 text-center relative overflow-hidden border-b border-b-white/10">
+      <section className="w-full bg-glacier-navy py-16 px-6 text-center relative overflow-hidden border-b border-b-white/10">
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-glacier-teal/20 to-transparent blur-[80px] pointer-events-none" />
 
@@ -113,11 +113,11 @@ export default function HomePage() {
           className="relative z-10 max-w-5xl mx-auto flex flex-col items-center"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-nohemi font-bold text-white mb-6 leading-tight">
-            The Glaciers Need a Voice. <span className="text-red-700 drop-shadow-md">Be One.</span>
+            The Glaciers Need a Voice. <span className="text-glacier-teal drop-shadow-md">Be One.</span>
           </h2>
 
           <p className="font-cabin text-lg md:text-xl text-white/90 max-w-2xl mb-10 leading-relaxed">
-            Whether you are a researcher, a policymaker, a filmmaker, a community leader, or someone who cares — there is a role for you in this work.
+            Whether you are a researcher, a policymaker, a filmmaker, a community leader, or someone who cares there is a role for you in this work.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">

@@ -30,17 +30,10 @@ export default function AboutLanding() {
         { 
             name: "Team & Advisors", 
             href: "/about/team", 
-            desc: "The multidisciplinary experts and advisors driving our institutional capacity.",
+            desc: "The multidisciplinary experts and advisors driving our mission for glacier resilience.",
             icon: <FaUsers />,
             bg: "bg-glacier-navy"
         },
-        { 
-            name: "Partners & Networks", 
-            href: "/about/partners", 
-            desc: "Our global collaborations across governments, NGOs, and innovation hubs.",
-            icon: <FaHandshake />,
-            bg: "bg-glacier-teal"
-        }
     ];
 
     return (
@@ -48,109 +41,121 @@ export default function AboutLanding() {
             <Navbar />
 
             {/* 🏔️ OG Cinematic Hero */}
-            <section className="relative h-[55vh] flex items-center justify-center pt-32 bg-glacier-navy overflow-hidden">
+            <section className="relative h-[60vh] flex items-start justify-center pt-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="/story/crisiss.jpg" 
+                        src="/about/banner2.JPG" 
                         alt="About Us Background" 
-                        className="object-cover w-full h-full grayscale brightness-[0.25] scale-105"
+                        className="object-cover w-full h-full object-[center_30%] scale-100"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/60"></div>
+                <div className="absolute inset-0 bg-black/30"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-4">
                     <motion.div 
-                        initial={{ opacity: 0, scale: 0.98 }} 
-                        animate={{ opacity: 1, scale: 1 }} 
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="space-y-4 md:space-y-8"
+                        initial={{ opacity: 0, y: 30 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="space-y-6"
                     >
-                        <h1 className="text-5xl md:text-8xl lg:text-9xl font-nohemi text-white mb-6 md:mb-10 leading-[0.8] tracking-tighter drop-shadow-2xl">
-                            The <span className="text-glacier-teal italic">Foundation</span>
+                        <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-nohemi text-white mb-6 leading-none tracking-tighter drop-shadow-2xl">
+                            About <span className="text-glacier-teal italic">Us</span>
                         </h1>
                     </motion.div>
                 </div>
             </section>
 
-            {/* 🏛️ Institutional Mandate - High Impact Asymmetric Statement */}
-            <section className="py-24 md:py-32 px-6 md:px-12 bg-glacier-offwhite relative">
-                <div className="max-w-7xl mx-auto">
+            {/* 🧊 Frozen Mandate Section - More Visual & Impactful */}
+            <section className="py-32 px-6 md:px-12 bg-white relative overflow-hidden">
+                {/* Decorative Ice Shard Background Elements */}
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glacier-teal/5 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-glacier-navy/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                         <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="lg:col-span-6"
+                            transition={{ duration: 0.8 }}
+                            className="lg:col-span-7"
                         >
-                            <span className="text-[10px] text-glacier-teal font-bold tracking-[0.3em] uppercase block mb-6">Institutional Mandate</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-nohemi text-glacier-navy tracking-tight leading-[1.1]">
-                                Developing <span className="text-glacier-teal italic">resilience</span> for the world&apos;s frozen assets.
+                            <span className="text-[10px] text-glacier-teal font-bold tracking-[0.4em] uppercase block mb-8 font-nohemi">The Mandate</span>
+                            <h2 className="text-5xl md:text-7xl lg:text-8xl font-nohemi text-glacier-navy tracking-tighter leading-[0.9] mb-10">
+                                Redefining <br />
+                                <span className="text-glacier-teal italic">human reliance</span> <br />
+                                on the cryosphere.
                             </h2>
+                            <div className="h-1 w-24 bg-glacier-teal rounded-full mb-10"></div>
                         </motion.div>
                         
                         <motion.div 
-                            initial={{ opacity: 0, x: 20 }}
+                            initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="lg:col-span-6 border-l border-glacier-navy/10 pl-8 md:pl-12 space-y-6"
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="lg:col-span-5 border-l-2 border-glacier-teal/20 pl-8 md:pl-16 space-y-8"
                         >
-                            <p className="text-lg md:text-xl md:text-2xl text-glacier-navy/80 font-cabin leading-relaxed font-light">
-                                The Voice of Glaciers Foundation is a registered Section 8 nonprofit in India. Born from lived survival on Mt. Annapurna, our core mandate is to redefine human reliance on the cryosphere.
+                            <p className="text-xl md:text-3xl text-glacier-navy font-cabin leading-tight font-light italic">
+                                &quot;We connect mountain wisdom with global policy to ensure glaciers are protected as living entities.&quot;
                             </p>
-                            <p className="text-base md:text-lg text-glacier-navy/50 font-cabin leading-relaxed font-light">
-                                Our current operational focus lies completely within the Hindu Kush Himalaya (HKH) region, specializing in extreme climate preparedness and building top-tier institutional capacity.
-                            </p>
+                            <div className="space-y-6 pt-6">
+                                <p className="text-base md:text-lg text-glacier-navy/60 font-cabin leading-relaxed font-light">
+                                    The Voice of Glacier Foundation was born from a miraculous survival on Mt. Annapurna. Our mission is to build extreme climate resilience across the Hindu Kush Himalaya.
+                                </p>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* 🔳 Navigation Grid - Correctly Balanced & Snappy Transitions */}
-            <section className="py-24 px-4 md:px-12 bg-white relative">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+            {/* ❄️ Navigation Hub - Enhanced Frozen Aesthetic */}
+            <section className="py-24 px-4 md:px-12 bg-glacier-offwhite relative">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                         {cards.map((card, i) => (
                             <Link key={i} href={card.href} className="group">
                                 <motion.div 
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: i * 0.05 }}
-                                    className={`relative h-[280px] md:h-[320px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:shadow-glacier-teal/10`}
+                                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                                    className={`relative h-[450px] rounded-[3rem] overflow-hidden border border-white shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-glacier-teal/20 bg-white group`}
                                 >
-                                    {/* Backdrop/BG */}
-                                    <div className={`absolute inset-0 ${card.bg} transition-colors duration-500`}></div>
-                                    
-                                    {/* Static Glass Layer */}
-                                    <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] backdrop-saturate-[1.2]"></div>
+                                    {/* Dynamic Background Image Layer */}
+                                    <div className="absolute inset-0 z-0">
+                                        <div className={`absolute inset-0 ${card.bg} opacity-90 group-hover:opacity-100 transition-all duration-700`}></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    </div>
 
-                                    {/* Hover Shine Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-105%] group-hover:translate-x-[105%] transition-transform duration-1000"></div>
+                                    {/* Icy Glass Frosting */}
+                                    <div className="absolute inset-0 z-10 bg-white/5 opacity-0 group-hover:opacity-100 backdrop-blur-[4px] transition-all duration-700"></div>
 
                                     {/* Content Area */}
-                                    <div className="relative z-10 p-10 h-full flex flex-col justify-between items-start">
-                                        <div className="space-y-4">
-                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-white/20 flex items-center justify-center text-white text-lg md:text-xl bg-white/5 backdrop-blur-3xl group-hover:bg-glacier-teal group-hover:scale-105 group-hover:border-transparent transition-all duration-500">
+                                    <div className="relative z-20 p-12 h-full flex flex-col justify-between">
+                                        <div className="space-y-6">
+                                            <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white text-3xl group-hover:bg-glacier-teal group-hover:border-transparent group-hover:scale-110 transition-all duration-500 shadow-xl">
                                                 {card.icon}
                                             </div>
-                                            <h3 className="text-2xl md:text-3xl font-nohemi text-white tracking-tight leading-none group-hover:text-glacier-teal transition-colors">
-                                                {card.name}
-                                            </h3>
-                                            <p className="text-[11px] md:text-[13px] text-white/40 font-light leading-relaxed max-w-[200px] md:max-w-[240px] group-hover:text-white/70 transition-colors uppercase tracking-widest font-cabin">
-                                                {card.desc}
-                                            </p>
+                                            <div className="pt-4">
+                                                <h3 className="text-4xl font-nohemi text-white tracking-tighter leading-none mb-4 group-hover:text-glacier-teal transition-colors">
+                                                    {card.name}
+                                                </h3>
+                                                <p className="text-sm text-white/60 font-light leading-relaxed group-hover:text-white transition-colors font-cabin">
+                                                    {card.desc}
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.4em] text-white/30 group-hover:text-glacier-teal transition-colors font-nohemi transform group-hover:translate-x-1 duration-500">
-                                            <span>Explore Chapter</span> 
-                                            <FaArrowRight className="text-lg opacity-40 group-hover:opacity-100" />
+                                        <div className="flex items-center gap-4 text-xs font-nohemi font-bold uppercase tracking-[0.3em] text-white/40 group-hover:text-glacier-teal transition-all duration-500 transform group-hover:translate-x-2">
+                                            <span>Read More</span> 
+                                            <div className="w-10 h-[1px] bg-white/20 group-hover:bg-glacier-teal group-hover:w-16 transition-all duration-500"></div>
+                                            <FaArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity" />
                                         </div>
                                     </div>
 
-                                    {/* Subtle Ambient Hover Circle */}
-                                    <div className="absolute -right-32 -top-32 w-64 h-64 bg-white/5 rounded-full blur-[80px] group-hover:bg-glacier-teal/10 transition-all duration-1000"></div>
+                                    {/* Internal Light Flare */}
+                                    <div className="absolute -right-32 -bottom-32 w-64 h-64 bg-glacier-teal/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-all duration-1000"></div>
                                 </motion.div>
                             </Link>
                         ))}

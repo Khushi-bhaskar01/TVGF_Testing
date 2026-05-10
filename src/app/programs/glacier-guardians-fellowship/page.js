@@ -135,9 +135,14 @@ export default function GlacierGuardiansFellowshipPage() {
                         We are actively looking for dedicated youth leaders to apply, as well as institutional partners to co-host and co-fund the fellowship.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
-                        <Link href="#" className="bg-glacier-teal text-white px-8 py-4 rounded-sm font-cabin font-bold hover:bg-white hover:text-glacier-navy transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto text-center shadow-lg shadow-glacier-teal/20">
+                        <a 
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-glacier-teal text-white px-8 py-4 rounded-sm font-cabin font-bold hover:bg-white hover:text-glacier-navy transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto text-center shadow-lg shadow-glacier-teal/20"
+                        >
                             Apply for Cohort 1 →
-                        </Link>
+                        </a>
                         <Link href="/get-involved/partner" className="bg-transparent text-white border border-glacier-lightTeal px-8 py-4 rounded-sm font-cabin font-bold hover:border-white transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto text-center">
                             Partner with the Fellowship →
                         </Link>

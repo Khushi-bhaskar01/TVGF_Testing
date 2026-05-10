@@ -16,7 +16,8 @@ export default function PodcastPage() {
     <div className="min-h-screen flex flex-col font-cabin bg-glacier-light dark:bg-glacier-dark transition-colors duration-300">
       <Navbar />
 
-      <main className="flex-grow pt-32 pb-20">
+      {/* Back button - Standardized Navbar Clearance */}
+      <main className="max-w-6xl mx-auto px-6 pt-40 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           
           {/* HEADER SECTION */}

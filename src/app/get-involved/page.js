@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,52 +71,55 @@ export default function GetInvolvedPage() {
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFA] text-glacier-navy">
       <Navbar />
       
-      <main className="pt-32">
-        {/* Hero Section */}
-        <section ref={heroRef} className="px-6 md:px-20 max-w-7xl mx-auto mb-24">
+      <main className="bg-glacier-offwhite pb-20">
+        {/* Simple Hero Section */}
+        <section className="pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            <span className="hero-animate block text-glacier-teal font-cabin font-bold tracking-[0.2em] uppercase text-xs mb-6">
-              Empower the Cryosphere
+            <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-6 bg-glacier-navy/5 px-6 py-2 rounded-full border border-glacier-navy/5 shadow-sm">
+              The Movement
             </span>
-            <h1 className="hero-animate font-nohemi text-5xl md:text-8xl font-bold leading-[0.95] mb-8 tracking-tight">
-              Many Ways to <br />
-              <span className="text-glacier-teal">Contribute.</span>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-nohemi font-bold text-glacier-navy mb-8 leading-[0.85] tracking-tight">
+              Join <br /><span className="text-glacier-teal">Forces.</span>
             </h1>
-            <p className="hero-animate font-cabin text-xl md:text-2xl text-glacier-navy/70 leading-relaxed max-w-3xl">
-              There are many ways to contribute to this work — whether you lead an institution, bring a skill, or simply want to be part of a movement that matters.
+            <p className="text-xl md:text-2xl text-glacier-warmGrey leading-relaxed font-cabin max-w-3xl">
+              Connect your path with ours. Together, we can build the resilience infrastructure required to protect the world&apos;s frozen assets.
             </p>
           </div>
         </section>
 
-        {/* Pathways Grid */}
-        <section className="px-6 md:px-20 max-w-7xl mx-auto mb-40">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Pathways Grid - REDESIGNED FOR PREMIUM LOOK */}
+        <section className="px-6 md:px-20 max-w-7xl mx-auto py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {cards.map((card, i) => (
               <Link 
                 key={i} 
                 href={card.href}
-                ref={el => cardsRef.current[i] = el}
-                className="group relative bg-white border border-gray-100 rounded-3xl p-10 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:border-glacier-teal/20"
+                className="group relative bg-white rounded-[3rem] p-12 flex flex-col h-full border border-white shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-glacier-teal/20 overflow-hidden"
               >
-                <div className="flex justify-between items-start mb-12">
-                  <span className="font-nohemi text-5xl text-gray-100 group-hover:text-glacier-teal/10 transition-colors duration-500">
-                    {card.index}
-                  </span>
-                  <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500">
+                {/* Internal Decorative Glow */}
+                <div className="absolute -right-24 -bottom-24 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 transition-all duration-700"></div>
+                
+                <div className="flex justify-between items-start mb-16 relative z-10">
+                   <div className="w-14 h-14 rounded-2xl bg-glacier-offwhite border border-glacier-navy/5 flex items-center justify-center text-glacier-navy text-2xl group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500 shadow-sm">
+                      <span className="font-nohemi font-bold">{card.index}</span>
+                   </div>
+                  <div className="w-12 h-12 rounded-full border border-glacier-navy/5 flex items-center justify-center text-glacier-navy group-hover:bg-glacier-navy group-hover:text-white transition-all duration-500">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
                 
-                <h3 className="font-nohemi text-2xl font-bold mb-4">{card.title}</h3>
-                <p className="font-cabin text-glacier-navy/60 text-sm mb-8 leading-relaxed flex-grow">
-                  {card.description}
-                </p>
+                <div className="relative z-10 flex-grow">
+                  <h3 className="font-nohemi text-3xl md:text-4xl font-bold mb-6 tracking-tighter text-glacier-navy group-hover:text-glacier-teal transition-colors">{card.title}</h3>
+                  <p className="font-cabin text-glacier-navy/60 text-base mb-10 leading-relaxed font-light">
+                    {card.description}
+                  </p>
+                </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto">
+                <div className="flex flex-wrap gap-3 mt-auto relative z-10">
                   {card.tags.map((tag, t) => (
-                    <span key={t} className="text-[10px] font-cabin font-bold uppercase tracking-widest px-3 py-1 bg-gray-50 text-glacier-navy/40 rounded-full group-hover:bg-glacier-teal/5 group-hover:text-glacier-teal transition-colors duration-500">
+                    <span key={t} className="text-[10px] font-nohemi font-bold uppercase tracking-[0.3em] px-4 py-1.5 bg-glacier-offwhite text-glacier-navy/40 rounded-full group-hover:bg-glacier-teal group-hover:text-white transition-all duration-500">
                       {tag}
                     </span>
                   ))}
@@ -125,24 +129,32 @@ export default function GetInvolvedPage() {
           </div>
         </section>
 
-        {/* Impact Band */}
-        <section className="w-full bg-glacier-navy py-24 px-6 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-glacier-teal/10 to-transparent opacity-50" />
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="font-nohemi text-4xl md:text-5xl text-white font-bold mb-8">
-              The glaciers can&apos;t wait. <br />
-              <span className="text-glacier-teal italic font-light">Neither can we.</span>
-            </h2>
-            <p className="font-cabin text-white/60 text-lg mb-12 max-w-2xl mx-auto">
-              Every partnership, every volunteer hour, every guardian subscription extends the timeline for Earth&apos;s vanishing ice.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/get-involved/glacier-guardian" className="w-full sm:w-auto px-10 py-4 bg-glacier-teal text-white font-cabin font-bold rounded-md hover:bg-white hover:text-glacier-navy transition-all duration-300">
-                Join as Guardian
-              </Link>
-              <Link href="/get-involved/partner" className="w-full sm:w-auto px-10 py-4 border border-white/20 text-white font-cabin font-bold rounded-md hover:bg-white hover:text-glacier-navy transition-all duration-300">
-                Partner With Us
-              </Link>
+        {/* Impact Band - REDESIGNED */}
+        <section className="px-6 md:px-20 max-w-7xl mx-auto mb-32">
+          <div className="w-full bg-[#0a1a2a] rounded-[4rem] py-24 px-12 text-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,128,128,0.3)]">
+            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-glacier-teal rotate-45 blur-[100px]"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500 rotate-45 blur-[100px]"></div>
+            </div>
+            
+            <div className="relative z-10 max-w-4xl mx-auto">
+               <span className="inline-block text-glacier-teal font-nohemi font-bold text-[10px] uppercase tracking-[0.4em] mb-8 bg-white/5 px-6 py-2 rounded-full border border-white/10 backdrop-blur-md shadow-2xl">
+                The Urgency
+              </span>
+              <h2 className="font-nohemi text-5xl md:text-7xl text-white font-bold mb-10 tracking-tighter leading-none">
+                The glaciers <span className="italic font-light">won&apos;t wait.</span>
+              </h2>
+              <p className="font-cabin text-white/60 text-lg md:text-xl mb-14 max-w-2xl mx-auto font-light leading-relaxed">
+                Connect your path with ours. Together, we can build the resilience infrastructure required to protect the world&apos;s frozen assets.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-12 py-5 bg-glacier-teal text-white font-nohemi font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-500 shadow-2xl">
+                  Join as Guardian
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-12 py-5 border border-white/20 text-white font-nohemi font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-500 backdrop-blur-md">
+                  Partner With Us
+                </a>
+              </div>
             </div>
           </div>
         </section>

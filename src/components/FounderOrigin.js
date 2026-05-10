@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export const FounderOrigin = () => {
   return (
-    <section className="w-full bg-glacier-offwhite py-24 px-6">
+    <section className="w-full bg-glacier-offwhite py-16 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
         {/* Left Column */}
@@ -31,7 +31,7 @@ export const FounderOrigin = () => {
               In 2023, founder Anurag Maloo survived a near-fatal fall at ~6,000m on Mt. Annapurna. For 72 hours, he was trapped deep inside an icy crevasse without food, water, or oxygen.
             </p>
             <p>
-              Against all odds, he was rescued. But survival was not a return to normal—it became a deep responsibility. This profound experience on the mountain ignited the founding of The Voice of Glaciers Foundation.
+              Against all odds, he was rescued. But survival was not a return to normal it became a deep responsibility. This profound experience on the mountain ignited the founding of The Voice of Glaciers Foundation.
             </p>
           </div>
 

@@ -9,7 +9,7 @@ export default function ProgramsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex flex-col justify-end pt-48 pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-glacier-light">
+      <section className="relative min-h-[50vh] flex flex-col justify-end pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-glacier-light">
 
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-glacier-lightTeal/10 to-transparent pointer-events-none -z-10"></div>
 
@@ -32,7 +32,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* In Execution Section */}
-      <section className="pb-24 p-6 md:p-12">
+      <section className="py-24 p-6 md:p-12">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
             <h2 className="text-3xl md:text-5xl font-nohemi font-bold text-glacier-navy">In Execution — 2026</h2>
@@ -42,7 +42,6 @@ export default function ProgramsPage() {
 
             {/* Card 1- Glacier Dialogues */}
             <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
               <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
               <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
 
@@ -73,7 +72,6 @@ export default function ProgramsPage() {
 
             {/* Card 2- Glacier Guardians Fellowship */}
             <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
               <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
               <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
 
@@ -102,40 +100,8 @@ export default function ProgramsPage() {
               </Link>
             </div>
 
-            {/* Card 3- GlacierX Festival */}
-            <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
-              <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
-              <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
-
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-glacier-teal group-hover:w-2 transition-all duration-300"></div>
-              <div className="flex justify-between items-start mb-8">
-                <span className="bg-glacier-teal text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">Launching 2026</span>
-              </div>
-              <h3 className="text-3xl font-bold font-nohemi text-glacier-navy mb-4">GlacierX Festival</h3>
-              <p className="text-base text-glacier-warmGrey mb-8 leading-relaxed font-cabin">
-                An immersive convening where science, art, ritual, and policy converge to reimagine humanity&apos;s relationship with ice.
-              </p>
-
-              <div className="flex flex-col gap-4 mb-10 flex-grow pt-6 border-t border-glacier-light/50">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Geography</span>
-                  <span className="text-sm font-cabin text-glacier-navy font-bold">Himalayan Region</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Focus</span>
-                  <span className="text-sm font-cabin text-glacier-navy font-bold">Science, Art & Ritual</span>
-                </div>
-              </div>
-
-              <Link href="/programs/glacierx-festival" className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 bg-glacier-teal/10 hover:bg-glacier-teal hover:text-white rounded-full text-xs text-glacier-teal font-bold tracking-widest uppercase transition-all duration-300 w-fit group/btn">
-                Learn More <span className="transform transition-transform duration-300 group-hover/btn:translate-x-2">→</span>
-              </Link>
-            </div>
-
             {/* Card 4- Time Markers / Glacier Memory */}
             <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
               <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
               <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
 
@@ -163,21 +129,9 @@ export default function ProgramsPage() {
                 Learn More <span className="transform transition-transform duration-300 group-hover/btn:translate-x-2">→</span>
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* In Development Section */}
-      <section className="pb-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14 border-t border-glacier-light pt-16">
-            <h2 className="text-3xl md:text-5xl font-nohemi font-bold text-glacier-navy">In Development — 2026/27</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {/* Card 5- HCSN */}
+            {/* Card 6- India Glacier Watch (formerly GlacierX Platform) */}
             <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
               <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
               <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
 
@@ -185,46 +139,15 @@ export default function ProgramsPage() {
               <div className="flex justify-between items-start mb-8">
                 <span className="bg-glacier-warmGrey text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">In Development</span>
               </div>
-              <h3 className="text-3xl font-bold font-nohemi text-glacier-navy mb-4">Himalayan Climate Sentinels Network</h3>
-              <p className="text-base text-glacier-warmGrey mb-8 leading-relaxed font-cabin">
-                A community-powered climate intelligence and distributed observation network for the Third Pole.
-              </p>
-
-              <div className="flex flex-col gap-4 mb-10 flex-grow pt-6 border-t border-glacier-light/50">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Infrastructure</span>
-                  <span className="text-sm font-cabin text-glacier-navy font-bold">3-5 Sentinel Stations</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Community</span>
-                  <span className="text-sm font-cabin text-glacier-navy font-bold">25 Observers Trained</span>
-                </div>
-              </div>
-
-              <Link href="/programs/hcsn" className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 bg-glacier-teal/10 hover:bg-glacier-teal hover:text-white rounded-full text-xs text-glacier-teal font-bold tracking-widest uppercase transition-all duration-300 w-fit group/btn">
-                Learn More <span className="transform transition-transform duration-300 group-hover/btn:translate-x-2">→</span>
-              </Link>
-            </div>
-
-            {/* Card 6- GlacierX Platform */}
-            <div className="group bg-white p-10 lg:p-12 relative flex flex-col h-full border border-transparent hover:border-glacier-teal/30 hover:shadow-2xl hover:shadow-glacier-teal/10 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden">
-              {/* Bg Faded Circles */}
-              <div className="absolute -right-12 -top-12 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl group-hover:bg-glacier-teal/10 group-hover:scale-150 transition-all duration-700 pointer-events-none z-0"></div>
-              <div className="absolute -left-12 -bottom-12 w-40 h-40 bg-glacier-navy/5 rounded-full blur-2xl group-hover:bg-glacier-navy/10 group-hover:scale-125 transition-all duration-700 pointer-events-none z-0"></div>
-
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-glacier-warmGrey group-hover:w-2 transition-all duration-300"></div>
-              <div className="flex justify-between items-start mb-8">
-                <span className="bg-glacier-warmGrey text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">In Development</span>
-              </div>
-              <h3 className="text-3xl font-bold font-nohemi text-glacier-navy mb-4">GlacierX Platform</h3>
+              <h3 className="text-3xl font-bold font-nohemi text-glacier-navy mb-4">India Glacier Watch</h3>
               <p className="text-base text-glacier-warmGrey mb-8 leading-relaxed font-cabin">
                 The full ecosystem hosting digital resilience infrastructure, fellowships, and the Glacier Guardians Network.
               </p>
 
               <div className="flex flex-col gap-4 mb-10 flex-grow pt-6 border-t border-glacier-light/50">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Technology</span>
-                  <span className="text-sm font-cabin text-glacier-navy font-bold">6-Layer Stack</span>
+                  <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Status</span>
+                  <span className="text-sm font-cabin text-glacier-navy font-bold">Research & Scoping</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-glacier-warmGrey font-bold tracking-widest uppercase">Philosophy</span>

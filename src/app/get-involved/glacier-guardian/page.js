@@ -34,12 +34,8 @@ export default function GlacierGuardianPage() {
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFA] text-glacier-navy">
       <Navbar />
 
-      <main className="pt-32">
+      <main className="pt-20">
         <section className="pt-24 pb-20 px-6 md:px-20 max-w-7xl mx-auto text-center">
-          <Link href="/get-involved" className="hero-el inline-flex items-center gap-2 mb-12 text-xs font-cabin font-bold tracking-widest uppercase text-glacier-teal hover:translate-y-[-4px] transition-transform">
-            <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4"><path d="M15 10H5M10 15l-5-5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            Back to Pathways
-          </Link>
           <div className="max-w-4xl mx-auto">
             <h1 className="hero-el font-nohemi text-5xl md:text-8xl font-bold leading-[0.95] mb-8 tracking-tight">
               Glacier <br /><span className="text-glacier-teal">Guardian.</span>
@@ -98,32 +94,29 @@ export default function GlacierGuardianPage() {
           </div>
         </section>
 
+        {/* Guardian Network Redirect - REDESIGNED */}
         <section className="px-6 md:px-20 max-w-7xl mx-auto mb-40">
-          <div className="max-w-3xl mx-auto bg-white p-12 md:p-20 rounded-[40px] border border-gray-100 shadow-2xl relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-white p-12 md:p-24 rounded-[4rem] border border-gray-100 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden text-center">
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-glacier-teal/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
             
-            <h2 className="font-nohemi text-4xl md:text-5xl font-bold mb-12 text-center">Join the <span className="text-glacier-teal">Network.</span></h2>
-            <form className="space-y-6 font-cabin relative z-10">
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Full Name</label>
-                <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Your Name" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Country / Region</label>
-                <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Where are you based?" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Background (Brief)</label>
-                <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="e.g. Student, Scientist, Climber..." />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase font-bold tracking-widest text-glacier-navy/40">Why do you want to join?</label>
-                <textarea rows="4" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-glacier-teal outline-none transition-all bg-gray-50 focus:bg-white" placeholder="Your motivation..."></textarea>
-              </div>
-              <button className="w-full py-5 bg-glacier-navy text-white rounded-xl font-bold tracking-[0.1em] uppercase text-sm hover:bg-glacier-teal transition-all duration-500 shadow-xl shadow-glacier-navy/20 hover:shadow-glacier-teal/20">
-                Become a Guardian
-              </button>
-            </form>
+            <div className="relative z-10">
+               <span className="inline-block text-glacier-teal font-nohemi font-bold text-[10px] uppercase tracking-[0.4em] mb-8 bg-glacier-offwhite px-6 py-2 rounded-full border border-glacier-navy/5 shadow-sm">
+                Movement Base
+              </span>
+              <h2 className="font-nohemi text-5xl md:text-7xl font-bold mb-10 tracking-tighter leading-none">Join the <span className="text-glacier-teal italic">Network.</span></h2>
+              <p className="font-cabin text-xl text-glacier-navy/70 mb-14 leading-relaxed font-light">
+                Become a sentinel for the cryosphere. Our global network of Guardians is the frontline of glacier preparedness. Start your journey by filling out the official registration form.
+              </p>
+              
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block px-16 py-6 bg-glacier-teal text-white rounded-full font-nohemi font-bold tracking-[0.2em] uppercase text-xs hover:bg-glacier-navy transition-all duration-500 shadow-2xl hover:-translate-y-1"
+              >
+                Register as Guardian
+              </a>
+            </div>
           </div>
         </section>
       </main>
