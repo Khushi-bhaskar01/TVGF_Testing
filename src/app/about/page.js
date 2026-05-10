@@ -44,7 +44,7 @@ export default function AboutLanding() {
             <section className="relative h-[60vh] flex items-start justify-center pt-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="/about/banner2.JPG" 
+                        src="/About/banner2.JPG" 
                         alt="About Us Background" 
                         className="object-cover w-full h-full object-[center_30%] scale-100"
                     />

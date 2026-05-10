@@ -128,7 +128,7 @@ export default function FounderStory() {
             <section className="relative h-[45vh] flex items-start justify-center pt-24 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/about/Founder.JPG"
+                        src="/About/Founder.JPG"
                         alt="Founder Expedition Background"
                         fill
                         className="object-cover w-full h-full object-[center_35%] scale-100"

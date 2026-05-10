@@ -72,7 +72,7 @@ export default function OurStory() {
             <section className="relative h-[60vh] flex items-start justify-center pt-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/about/banner.JPG"
+                        src="/About/banner.JPG"
                         alt="About Us Background"
                         className="object-cover w-full h-full object-[center_50%] scale-100"
                     />
