@@ -80,7 +80,6 @@ export default function AboutLanding() {
                             transition={{ duration: 0.8 }}
                             className="lg:col-span-7"
                         >
-                            <span className="text-[10px] text-glacier-teal font-bold tracking-[0.4em] uppercase block mb-8 font-nohemi">The Mandate</span>
                             <h2 className="text-5xl md:text-7xl lg:text-8xl font-nohemi text-glacier-navy tracking-tighter leading-[0.9] mb-10">
                                 Redefining <br />
                                 <span className="text-glacier-teal italic">human reliance</span> <br />
@@ -138,7 +137,7 @@ export default function AboutLanding() {
                                                 {card.icon}
                                             </div>
                                             <div className="pt-4">
-                                                <h3 className="text-4xl font-nohemi text-white tracking-tighter leading-none mb-4 group-hover:text-glacier-teal transition-colors">
+                                                <h3 className="text-4xl font-nohemi text-white tracking-tighter leading-none mb-4 group-hover:text-white transition-colors">
                                                     {card.name}
                                                 </h3>
                                                 <p className="text-sm text-white/60 font-light leading-relaxed group-hover:text-white transition-colors font-cabin">

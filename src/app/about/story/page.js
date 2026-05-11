@@ -96,7 +96,6 @@ export default function OurStory() {
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-glacier-teal/10 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <span className="text-[9px] font-nohemi text-glacier-teal tracking-[0.5em] uppercase mb-3 block font-bold">The Strategic Vision</span>
                         <h2 className="text-4xl md:text-6xl font-nohemi mb-6 leading-none tracking-tighter">
                             North Star: <span className="text-glacier-teal italic">Goals for 2035</span>
                         </h2>
@@ -124,7 +123,7 @@ export default function OurStory() {
                             >
                                 <div className="text-glacier-teal group-hover:text-glacier-navy text-xl font-nohemi mb-3">0{i + 1}</div>
                                 <h3 className="text-xl font-nohemi mb-3 leading-tight">{goal.title}</h3>
-                                <p className="text-xs text-white/50 group-hover:text-glacier-navy/70 font-cabin font-light leading-relaxed">{goal.desc}</p>
+                                <p className="text-xm text-white/50 group-hover:text-glacier-navy/70 font-cabin font-light leading-relaxed">{goal.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -155,7 +154,7 @@ export default function OurStory() {
                                 <FaCompass />
                             </div>
                             <div>
-                                <h2 className="text-[9px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Vision</h2>
+                                <h2 className="text-[10px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Vision</h2>
                                 <p className="text-xl md:text-3xl text-glacier-navy font-nohemi italic leading-tight group-hover:text-white tracking-tighter">
                                     &quot;A world where protected glaciers secure water security and climate stability.&quot;
                                 </p>
@@ -173,7 +172,7 @@ export default function OurStory() {
                                 <FaBalanceScale />
                             </div>
                             <div>
-                                <h2 className="text-[9px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Mission</h2>
+                                <h2 className="text-[10px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Mission</h2>
                                 <p className="text-base md:text-lg text-white font-cabin font-light leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
                                     To enable mountain communities to adapt by connecting science, local knowledge, and collective action through our unique SPACE framework.
                                 </p>
@@ -213,7 +212,7 @@ export default function OurStory() {
                                             {f.k}
                                         </h3>
 
-                                        <span className="block text-[9px] font-bold uppercase tracking-[0.3em] text-glacier-teal mb-4 group-hover:text-white/60 transition-colors">
+                                        <span className="block text-[11px] font-bold uppercase tracking-[0.3em] text-glacier-teal mb-4 group-hover:text-white/60 transition-colors">
                                             {f.t}
                                         </span>
                                     </div>
@@ -234,7 +233,6 @@ export default function OurStory() {
                         </div>
 
                         <div className="max-w-5xl mx-auto text-center mb-16 relative z-10">
-                            <span className="inline-block text-glacier-teal font-nohemi font-bold text-[9px] uppercase tracking-[0.4em] mb-4 bg-white/5 px-6 py-2 rounded-full border border-white/10">The Dual Force Model</span>
                             <h2 className="text-3xl md:text-5xl font-nohemi mb-6 leading-none tracking-tighter text-white">The <span className="text-glacier-teal italic">Sumit-Valley</span> <br /> Approach</h2>
                             <p className="text-base md:text-lg text-white/80 leading-relaxed font-cabin font-light max-w-2xl mx-auto">
                                 A dual force action model where real resilience flows both ways.
@@ -264,7 +262,7 @@ export default function OurStory() {
                                         </div>
                                     </div>
                                     <h3 className="text-xl font-nohemi mb-2 text-white tracking-tight">{step.label}</h3>
-                                    <p className="text-[9px] text-glacier-teal font-nohemi uppercase tracking-[0.2em] font-bold">{step.desc}</p>
+                                    <p className="text-[11px] text-glacier-teal font-nohemi uppercase tracking-[0.2em] font-bold">{step.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

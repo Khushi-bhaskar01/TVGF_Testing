@@ -124,7 +124,7 @@ export default function HomePage() {
             {/* Primary CTA */}
             <Link href="/get-involved/glacier-guardian" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto bg-glacier-teal hover:bg-white hover:text-glacier-navy text-white font-cabin text-base font-medium rounded-md px-8 py-4 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-glacier-teal/40">
-                Join as Glacier Guardian
+                Join the Movement
               </button>
             </Link>
 
