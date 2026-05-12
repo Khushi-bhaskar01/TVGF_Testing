@@ -123,7 +123,7 @@ export default function Navbar() {
           : "bg-white/95 hover:bg-white/80 backdrop-blur-md shadow-sm py-1 border-b border-gray-100"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex justify-between h-12 items-center gap-4">
+        <div className="flex justify-between h-10 items-center gap-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -142,7 +142,7 @@ export default function Navbar() {
               {structuredPages.map((page) => (
                 <div
                   key={page.name}
-                  className="relative h-12 flex items-center"
+                  className="relative h-10 flex items-center"
                   onMouseEnter={() => setDesktopDropdown(page.name)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
@@ -171,10 +171,10 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className={`fixed left-0 w-full bg-white text-black shadow-lg border-t border-gray-100 z-50 
-                          ${isTransparent ? "top-[64px]" : "top-[56px]"}`}
+                          ${isTransparent ? "top-[56px]" : "top-[48px]"}`}
                       >
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
                             {page.subpages.map((subpage) => (
                               <Link
                                 key={subpage.label}
@@ -182,11 +182,11 @@ export default function Navbar() {
                                 onClick={() => setDesktopDropdown(null)}
                                 className="block group"
                               >
-                                <h3 className={`text-glacier-navy font-semibold text-base mb-1 group-hover:text-glacier-teal transition-colors font-nohemi 
+                                <h3 className={`text-glacier-navy font-semibold text-[15px] group-hover:text-glacier-teal transition-colors font-nohemi 
                                   ${isLinkActive(subpage.href) ? "text-glacier-teal underline decoration-2 underline-offset-4" : "text-glacier-navy hover:text-glacier-teal"}`}>
                                   {subpage.label}
                                 </h3>
-                                <p className="text-glacier-warmGrey text-sm font-cabin leading-relaxed group-hover:text-gray-900 transition-colors">
+                                <p className="text-glacier-warmGrey text-sm font-cabin leading-snug group-hover:text-gray-900 transition-colors">
                                   {subpage.desc}
                                 </p>
                               </Link>
@@ -300,7 +300,7 @@ export default function Navbar() {
                         transition={{ duration: 0.2, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="ml-4 mt-2 space-y-2 pb-2 border-l-2 border-white/20 pl-3">
+                        <div className="ml-4 mt-1 space-y-1 pb-1 border-l-2 border-white/20 pl-3">
                           {link.subpages.map((subpage) => (
                             <Link
                               key={subpage.label}
@@ -309,7 +309,7 @@ export default function Navbar() {
                                 setIsOpen(false);
                                 setMobileDropdown(null);
                               }}
-                              className={`block text-sm transition-colors font-cabin py-1.5 ${isLinkActive(subpage.href)
+                              className={`block text-sm transition-colors font-cabin py-1 ${isLinkActive(subpage.href)
                                   ? "text-glacier-teal underline underline-offset-4 font-bold"
                                   : "text-white/80 hover:text-glacier-teal"
                                 }`}
