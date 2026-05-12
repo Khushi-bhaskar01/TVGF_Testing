@@ -13,14 +13,14 @@ export default function CompareSlider({
   const [dividerX, setDividerX] = useState(0.5);
   const [dragging, setDragging] = useState(false);
 
-  useEffect(() => {
-    const updateSliderPosition = (clientX) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = (clientX - rect.left) / rect.width;
-      setDividerX(Math.max(0, Math.min(1, x)));
-    };
+  const updateSliderPosition = (clientX) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = (clientX - rect.left) / rect.width;
+    setDividerX(Math.max(0, Math.min(1, x)));
+  };
 
+  useEffect(() => {
     const handleMouseMove = (e) => {
       if (!dragging) return;
       updateSliderPosition(e.clientX);

@@ -217,7 +217,7 @@ export default function OurStory() {
                                         </span>
                                     </div>
 
-                                    <p className="text-xs font-light leading-relaxed font-cabin text-glacier-navy/70 group-hover:text-white/90 transition-colors">
+                                    <p className="text-xm font-light leading-relaxed font-cabin text-glacier-navy/70 group-hover:text-white/90 transition-colors">
                                         {f.d}
                                     </p>
                                 </motion.div>

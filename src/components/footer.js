@@ -51,7 +51,7 @@ const Footer = () => {
                             <li><Link href="/programs/glacier-dialogues" className="hover:text-glacier-teal transition-colors">Glacier Dialogues</Link></li>
                             <li><Link href="/programs/glacier-dialogues" className="hover:text-glacier-teal transition-colors">Upcoming Dialogue</Link></li>
                             <li><Link href="/programs/glacier-guardians-fellowship" className="hover:text-glacier-teal transition-colors">Fellowship</Link></li>
-                            <li><Link href="/programs/hcsn" className="hover:text-glacier-teal transition-colors">H.C.S.N Network</Link></li>
+                            {/* <li><Link href="/programs/hcsn" className="hover:text-glacier-teal transition-colors">H.C.S.N Network</Link></li> */}
                             <li><Link href="/programs/glacierx-platform" className="hover:text-glacier-teal transition-colors">India Glacier Watch</Link></li>
                         </ul>
                     </div>

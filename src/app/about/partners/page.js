@@ -24,17 +24,17 @@ export default function Partners() {
         { name: "SDC Foundation", src: "/partners/sdc.png", desc: "Action-oriented think tank working on sustainable development in the Himalayas." }
     ];
 
-    const networks = [
-        { name: "Techstars", placeholder: "/partners/techstars.jpg" },
-        { name: "Startup Weekend", placeholder: "/partners/startup.jpg" },
-        { name: "Global Shapers", placeholder: "/partners/GSC.avif" },
-        { name: "2041 Foundation", placeholder: "/partners/2041F.jpg" },
-        { name: "SEALA", placeholder: "/partners/SEALA.webp" },
-        { name: "Terra.do", placeholder: "/partners/terrado.jpg" },
-        { name: "Teach For India", placeholder: "/partners/TFI.jpg" },
-        { name: "AIYD", placeholder: "/partners/aiyd.webp" },
-        { name: "ORF", placeholder: "/partners/ORF.jpg" }
-    ];
+    // const networks = [
+    //     { name: "Techstars", placeholder: "/partners/techstars.jpg" },
+    //     { name: "Startup Weekend", placeholder: "/partners/startup.jpg" },
+    //     { name: "Global Shapers", placeholder: "/partners/GSC.avif" },
+    //     { name: "2041 Foundation", placeholder: "/partners/2041F.jpg" },
+    //     { name: "SEALA", placeholder: "/partners/SEALA.webp" },
+    //     { name: "Terra.do", placeholder: "/partners/terrado.jpg" },
+    //     { name: "Teach For India", placeholder: "/partners/TFI.jpg" },
+    //     { name: "AIYD", placeholder: "/partners/aiyd.webp" },
+    //     { name: "ORF", placeholder: "/partners/ORF.jpg" }
+    // ];
 
     return (
         <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">

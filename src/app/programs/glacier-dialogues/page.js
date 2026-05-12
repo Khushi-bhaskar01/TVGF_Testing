@@ -46,31 +46,7 @@ export default function GlacierDialoguesPage() {
         </div>
       </section>
 
-      {/* Program Format Details */}
-      <section className="py-20 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-glacier-light">
-            <div className="md:pr-8 pt-8 md:pt-0">
-              <span className="text-[10px] text-glacier-warmGrey font-bold tracking-[0.2em] uppercase mb-4 block">Format</span>
-              <h3 className="text-2xl font-nohemi font-bold text-glacier-navy mb-3">90-minute online session</h3>
-            </div>
-            <div className="md:px-8 pt-8 md:pt-0">
-              <span className="text-[10px] text-glacier-warmGrey font-bold tracking-[0.2em] uppercase mb-4 block">Institutions</span>
-              <h3 className="text-2xl font-nohemi font-bold text-glacier-navy mb-3">Panelists</h3>
-              <p className="text-sm text-glacier-warmGrey font-cabin leading-relaxed">
-                Drawn from institutions including Ministry of Earth Sciences, IIT Bhubaneswar (Cryosense Lab), NDMA, and UNDP.
-              </p>
-            </div>
-            <div className="md:pl-8 pt-8 md:pt-0">
-              <span className="text-[10px] text-glacier-warmGrey font-bold tracking-[0.2em] uppercase mb-4 block">Outputs</span>
-              <h3 className="text-2xl font-nohemi font-bold text-glacier-navy mb-3">Published Outcomes</h3>
-              <p className="text-sm text-glacier-warmGrey font-cabin leading-relaxed">
-                Each session produces a published Substack article and recording.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Upcoming/Featured Session */}
       <section className="py-24 px-6 md:px-12 bg-glacier-offwhite">

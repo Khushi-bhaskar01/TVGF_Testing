@@ -154,9 +154,8 @@ export default function PartnerPage() {
                 </a>
 
                 <div className="pt-10 border-t border-gray-100 w-full">
-                  <p className="font-cabin text-[10px] uppercase font-bold tracking-[0.3em] mb-6 text-glacier-navy/30">Direct Inquiry</p>
                   <p className="font-cabin text-xl md:text-2xl font-light text-glacier-navy/60 leading-relaxed">
-                    For urgent or senior leadership inquiries, write directly to: <br />
+                    Or Contact Us <br />
                     <a href="mailto:thevoiceofglaciers@gmail.com" className="text-glacier-teal font-bold underline decoration-2 underline-offset-8 hover:opacity-80 transition-all">thevoiceofglaciers@gmail.com</a>
                   </p>
                 </div>

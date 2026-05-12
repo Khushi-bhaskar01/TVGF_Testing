@@ -41,7 +41,7 @@ export default function QuizSection() {
   if (shuffledQuestions.length === 0) return null;
 
   return (
-    <section className="w-full min-h-screen bg-glacier-light px-4 py-12 flex flex-col items-center justify-center">
+    <section id="quiz" className="w-full min-h-screen bg-glacier-light px-4 py-12 flex flex-col items-center justify-center">
       <motion.h1
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

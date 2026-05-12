@@ -75,9 +75,6 @@ export default function GetInvolvedPage() {
         {/* Simple Hero Section */}
         <section className="pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-6 bg-glacier-navy/5 px-6 py-2 rounded-full border border-glacier-navy/5 shadow-sm">
-              The Movement
-            </span>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-nohemi font-bold text-glacier-navy mb-8 leading-[0.85] tracking-tight">
               Join <br /><span className="text-glacier-teal">Forces.</span>
             </h1>
@@ -149,7 +146,7 @@ export default function GetInvolvedPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-12 py-5 bg-glacier-teal text-white font-nohemi font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-500 shadow-2xl">
-                  Join as Guardian
+                  Join The Movement
                 </a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-12 py-5 border border-white/20 text-white font-nohemi font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-500 backdrop-blur-md">
                   Partner With Us

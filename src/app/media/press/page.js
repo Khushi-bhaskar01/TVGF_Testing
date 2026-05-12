@@ -5,22 +5,76 @@ import Link from 'next/link';
 
 const pressData = [
   {
-    id: 'press-2',
-    title: 'Anurag Maloo Recognized as WEF Young Global Leader 2025',
-    publication: 'World Economic Forum',
-    date: '2026-01-15T00:00:00Z',
-    summary: 'TVGF Founder Anurag Maloo joins the 2025 cohort of Young Global Leaders, recognized for his work in cryosphere advocacy and mountain resilience.',
-    link: '#',
-    type: 'Official Announcement'
+    id: 'press-1',
+    title: 'Extreme weather events rapidly reshaping Himalayan glaciers: IIT study',
+    publication: 'Times of India',
+    date: '2026-05-11',
+    summary: 'IIT Indore study in Nature finds heatwaves and sudden heavy snowfall can rapidly alter Himalayan glacier melt, though long-term warming still drives retreat.',
+    link: 'https://timesofindia.indiatimes.com/city/dehradun/extreme-weather-events-rapidly-reshaping-himalayan-glaciers-iit-study/articleshow/131017974.cms',
+    type: 'News Feature'
   },
   {
-    id: 'press-1',
-    title: "Against All Odds: A Mountaineer's Tale of Survival, Hope, and Courage",
-    publication: 'TEDxGateway',
-    date: '2025-11-20T00:00:00Z',
-    summary: "In this TEDx talk, Anurag shares his 72-hour survival story inside a crevasse on Mt. Annapurna and how it birthed the mission to protect the world's glaciers.",
-    link: '#',
-    type: 'Talk / Video'
+    id: 'press-2',
+    title: 'Khangri glacier in Arunachal showing rapid changes, flood threat detected',
+    publication: 'The Print / PTI',
+    date: '2026-05-11',
+    summary: 'Scientists studying the Khangri glacier in Arunachal Pradesh’s Tawang district have observed rapid melting.',
+    link: 'https://theprint.in/india/khangri-glacier-in-arunachal-showing-rapid-changes-flood-threat-detected-study/2927895/',
+    type: 'News Feature'
+  },
+  {
+    id: 'press-3',
+    title: 'Drilling Into the Thwaites Glacier in Antarctica',
+    publication: 'The New York Times',
+    date: '2026-05-11',
+    summary: 'Ten people. Eight weeks. Three thousand feet to pierce a fast-melting Antarctic glacier.',
+    link: 'https://www.nytimes.com/2026/05/11/climate/antarctica-expedition-thwaites-glacier.html',
+    type: 'External Coverage'
+  },
+  {
+    id: 'press-4',
+    title: 'Subglacial CH₄ export from the Greenland Ice Sheet linked to a mid-Holocene warm period',
+    publication: 'Phys.org',
+    date: '2026-05-11',
+    summary: 'In a new paper, an international team led by scientists from Charles University, Czechia, has brought evidence linking widespread release of methane from the Greenland Ice Sheet.',
+    link: 'https://phys.org/news/2026-05-subglacial-ch-export-greenland-ice.html',
+    type: 'Research Article'
+  },
+  {
+    id: 'press-5',
+    title: 'LG Saxena Meets Union Minister CR Patil; Discusses Key Water Resource And Irrigation Initiatives For Ladakh',
+    publication: 'Daily Excelsior',
+    date: '2026-05-04',
+    summary: 'The Lieutenant Governor of Union Territory of Ladakh, Vinai Kumar Saxena, called on the Union Minister for Jal Shakti, CR Patil, in New Delhi.',
+    link: 'https://www.dailyexcelsior.com/lg-saxena-meets-union-minister-cr-patil-discusses-key-water-resource-and-irrigation-initiatives-for-ladakh/',
+    type: 'News Feature'
+  },
+  {
+    id: 'press-6',
+    title: 'Voice of Glaciers: A Ladakh Initiative to Save the Third Pole',
+    publication: 'Devdiscourse',
+    date: '2026-05-01',
+    summary: 'In a major move to protect the fragile ecosystem of the Hindu Kush Himalayas, the \'Voice of Glaciers\' initiative has been launched in Ladakh.',
+    link: 'https://www.devdiscourse.com/article/headlines/3894230-voice-of-glaciers-a-ladakh-initiative-to-save-the-third-pole',
+    type: 'Initiative Coverage'
+  },
+  {
+    id: 'press-7',
+    title: 'Ladakh’s 179 glacial lakes under scientific watch to detect changes, avert hazards',
+    publication: 'Daily Excelsior',
+    date: '2026-05-01',
+    summary: 'Monthly data tracking flags vulnerable hotspots Guidelines, multi-agency action plan to curb climate risks.',
+    link: 'https://www.dailyexcelsior.com/ladakhs-179-glacial-lakes-under-scientific-watch-to-detect-changes-avert-hazards/',
+    type: 'News Feature'
+  },
+  {
+    id: 'press-8',
+    title: 'International Mountain Day: Glaciers matter for food, water and livelihoods',
+    publication: 'TVGF Blog',
+    date: '2025-12-11',
+    summary: 'Today is World Mountain Day. I\'ve spent years in the mountains witnessing firsthand the critical role glaciers play in sustaining livelihoods globally.',
+    link: 'https://thevoiceofglaciers.org/media',
+    type: 'Internal Blog'
   }
 ];
 
@@ -37,9 +91,7 @@ export default function PressAndNewsPage() {
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-5xl mx-auto border-b border-glacier-navy/10 w-full">
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <Link href="/media" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-glacier-navy/60 hover:text-glacier-navy transition-colors mb-8">
-            <span>←</span> Back to Media
-          </Link>
+
           <h1 className="text-5xl md:text-7xl font-nohemi font-bold text-glacier-navy leading-tight tracking-tight mb-6">
             Press & News.
           </h1>

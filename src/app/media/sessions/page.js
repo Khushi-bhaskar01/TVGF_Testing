@@ -101,9 +101,7 @@ export default function GlacierDialoguesSessionsPage() {
       {/* HERO SECTION */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-glacier-navy/10 w-full">
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <Link href="/media" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-glacier-navy/60 hover:text-glacier-navy transition-colors mb-8">
-            <span>←</span> Back to Media
-          </Link>
+
           <h1 className="text-5xl md:text-7xl font-nohemi font-bold text-glacier-navy leading-tight tracking-tight mb-6">
             Glacier Dialogues Archive.
           </h1>

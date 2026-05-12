@@ -100,9 +100,6 @@ export default function GlacierGuardianPage() {
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-glacier-teal/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
             
             <div className="relative z-10">
-               <span className="inline-block text-glacier-teal font-nohemi font-bold text-[10px] uppercase tracking-[0.4em] mb-8 bg-glacier-offwhite px-6 py-2 rounded-full border border-glacier-navy/5 shadow-sm">
-                Movement Base
-              </span>
               <h2 className="font-nohemi text-5xl md:text-7xl font-bold mb-10 tracking-tighter leading-none">Join the <span className="text-glacier-teal italic">Network.</span></h2>
               <p className="font-cabin text-xl text-glacier-navy/70 mb-14 leading-relaxed font-light">
                 Become a sentinel for the cryosphere. Our global network of Guardians is the frontline of glacier preparedness. Start your journey by filling out the official registration form.
@@ -114,7 +111,7 @@ export default function GlacierGuardianPage() {
                 rel="noopener noreferrer"
                 className="inline-block px-16 py-6 bg-glacier-teal text-white rounded-full font-nohemi font-bold tracking-[0.2em] uppercase text-xs hover:bg-glacier-navy transition-all duration-500 shadow-2xl hover:-translate-y-1"
               >
-                Register as Guardian
+                Join The Movement
               </a>
             </div>
           </div>

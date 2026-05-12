@@ -27,8 +27,7 @@ export default function Navbar() {
         { label: "Our Story", href: "/about/story", desc: "The SPACE framework and our mission." },
         { label: "Founder Story", href: "/about/founder", desc: "Anurag Maloo's survival and vision." },
         { label: "Team & Advisors", href: "/about/team", desc: "The people driving the movement." },
-        { label: "Partners", href: "/partners", desc: "Our institutional collaborators." },
-
+        { label: "Partners", href: "/about/partners", desc: "Our institutional collaborators." },
       ]
     },
     {
@@ -45,10 +44,18 @@ export default function Navbar() {
       href: "/programs",
       subpages: [
         { label: "Glacier Dialogues", href: "/programs/glacier-dialogues", desc: "Monthly policy dialogue series." },
-        { label: "Upcoming Dialogue", href: "/programs/glacier-dialogues", desc: "Join our next live dialogue." },
         { label: "Glacier Guardians Fellowship", href: "/programs/glacier-guardians-fellowship", desc: "Empowering youth climate leaders." },
         { label: "Himalayan Climate Sentinels Network", href: "/programs/hcsn", desc: "Community-powered climate intelligence." },
         { label: "India Glacier Watch", href: "/programs/glacierx-platform", desc: "Open Digital Public Good infrastructure." }
+      ]
+    },
+    {
+      name: "Learn",
+      href: "/Learn",
+      subpages: [
+        { label: "Learn", href: "/Learn", desc: "Discover the importance of glaciers." },
+        { label: "Glacier Glossary", href: "/Learn#glossary", desc: "A comprehensive dictionary of glacier terms." },
+        { label: "Quiz", href: "/Learn#quiz", desc: "Test your knowledge about glaciers." }
       ]
     },
     {

@@ -9,7 +9,7 @@ export default function ProgramsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex flex-col justify-end pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-glacier-light">
+      <section className="relative min-h-[40vh] flex flex-col justify-end pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto border-b border-glacier-light">
 
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-glacier-lightTeal/10 to-transparent pointer-events-none -z-10"></div>
 
