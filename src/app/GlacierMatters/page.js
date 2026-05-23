@@ -11,37 +11,41 @@ export default function WhyGlaciersPage() {
         <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
             <Navbar />
             
-            {/* 🏔️ Premium Hero Section */}
-            <section className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden bg-glacier-navy pt-20">
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale"
-                >
-                    <source src="/video/meltingGlacier.mp4" type="video/mp4" />
-                </video>
+           {/* 🏔️ Premium Compact Hero Section */}
+<section className="relative h-[50vh] min-h-[450px] flex items-center justify-center text-center overflow-hidden bg-glacier-navy">
+    <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-25 grayscale"
+    >
+        <source src="/video/meltingGlacier.mp4" type="video/mp4" />
+    </video>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-glacier-navy/70 to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-glacier-navy/60 to-transparent" />
 
-                <div className="relative z-10 max-w-5xl px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-widest text-[10px] uppercase mb-6 bg-glacier-teal/10 px-3 py-1 rounded-full border border-glacier-teal/20">The Scientific Mission</span>
-                        <h1 className="text-5xl md:text-8xl font-nohemi text-white mb-8 leading-[0.95] tracking-tight">
-                            Why Glaciers <br />
-                            <span className="text-glacier-teal italic">Matter</span>
-                        </h1>
-                        <p className="mt-6 text-xl md:text-2xl text-glacier-warmGrey/90 font-light max-w-3xl mx-auto">
-                            They store freshwater for billions, dictate regional security, and regulate the Earth’s climate. Protecting them is the foundation of our survival.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+    <div className="relative z-10 max-w-4xl px-6">
+        <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
+            <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-widest text-[10px] uppercase mb-4 bg-glacier-teal/10 px-3 py-1 rounded-full border border-glacier-teal/20">
+                The Scientific Mission
+            </span>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-nohemi text-white mb-4 leading-[1] tracking-tight">
+                Why Glaciers <br />
+                <span className="text-glacier-teal italic">Matter</span>
+            </h1>
+            
+            <p className="text-base md:text-lg text-glacier-warmGrey/90 font-light max-w-2xl mx-auto leading-relaxed">
+                They store freshwater for billions, dictate regional security, and regulate the Earth’s climate. Protecting them is the foundation of our survival.
+            </p>
+        </motion.div>
+    </div>
+</section>
 
             {/* 1. THE CRYOSPHERE CRISIS */}
             <section id="cryosphere-crisis" className="py-32 px-6 md:px-12 bg-white relative">

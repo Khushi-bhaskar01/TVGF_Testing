@@ -117,9 +117,9 @@ export default function HeroSection() {
           <Image
             src="https://raw.githubusercontent.com/Adarsh108-tech/glacier-assets/main/comapny-hero-logo.webp"
             alt="Voice of Glacier Logo"
-            width={480}
-            height={180}
-            className="w-52 md:w-70 lg:w-[420px] h-auto object-contain relative z-10"
+            width={360}
+            height={135}
+            className="w-44 md:w-56 lg:w-[320px] h-auto object-contain relative z-10"
             priority
           />
         </motion.div>
@@ -129,10 +129,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
-          className="text-3xl md:text-4xl lg:text-[3.2rem] font-bold leading-[0.85] max-w-4xl font-nohemi text-white tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+          className="text-3xl md:text-4xl lg:text-[3.2rem] font-bold leading-[0.85] max-w-4xl font-nohemi text-glacier-navy tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
         >
           Protecting Glaciers. <br />
-          <span className="text-glacier-navy italic">Preparing Communities.</span>
+          <span className="text-white italic">Preparing Communities.</span>
         </motion.h1>
 
         {/* Subtext - GLASSMORPHISM REFINED */}
