@@ -88,8 +88,6 @@ export default function HomePage() {
       </section>
 
 
-      {/* Founder's Origin */}
-      <FounderOrigin />
 
       {/* how we work */}
       <HowWeWorkSection />

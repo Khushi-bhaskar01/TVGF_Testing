@@ -3,13 +3,14 @@
 import React from 'react';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
     FaLightbulb, FaShieldAlt, FaFileAlt, FaDatabase, FaGraduationCap, FaSeedling, FaArrowRight, FaLink, FaSearch
 } from 'react-icons/fa';
 
 const GapPage = () => {
-    // Exact 6 Gap Cards from the Brief
     const gapCards = [
         {
             title: "Imagination Gap",
@@ -50,102 +51,101 @@ const GapPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white">
+        <div className="min-h-screen bg-glacier-offwhite font-cabin selection:bg-glacier-teal selection:text-white text-slate-800">
             <Navbar />
             
-            {/* 🏔️ OG Cinematic Hero Section */}
-            <section className="relative h-screen flex items-center justify-center pt-32 bg-glacier-navy overflow-hidden">
+            {/* 🏔️ Compact Cinematic Hero Section */}
+            <section className="relative min-h-[40vh] flex flex-col items-center justify-center pt-28 pb-12 bg-glacier-navy overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img 
+                    <Image 
                         src="/story/gap.png" 
                         alt="Gap Background" 
-                        className="object-cover w-full h-full grayscale brightness-[0.2] scale-105"
+                        fill
+                        priority
+                        className="object-cover grayscale brightness-[0.2] scale-102"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-transparent to-glacier-navy/50" />
 
                 <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
                     <motion.div 
-                        initial={{ opacity: 0, y: 50 }} 
+                        initial={{ opacity: 0, y: 20 }} 
                         animate={{ opacity: 1, y: 0 }} 
-                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase mb-12 bg-white/5 px-8 py-3 rounded-full border border-white/10 backdrop-blur-xl">
+                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-4 bg-white/5 px-5 py-2 rounded-full border border-white/10 backdrop-blur-md">
                             Chapter 02: Preparedness
                         </span>
-                        <h1 className="text-5xl md:text-[8rem] lg:text-[10rem] font-nohemi text-white mb-10 leading-[0.8] tracking-tighter drop-shadow-2xl">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-nohemi font-bold text-white leading-tight tracking-tighter">
                             The Orphaned <br />
-                            <span className="text-glacier-teal italic text-5xl md:text-[8rem]">Crisis</span>
+                            <span className="text-glacier-teal italic font-normal text-2xl md:text-4xl lg:text-5xl">Crisis</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/50 font-light font-cabin max-w-3xl mx-auto mt-10">
+                        <p className="text-sm md:text-base text-white/60 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
                             Preparedness for glacier loss sits between climate mitigation, disaster response, and development.
                         </p>
 
-                        <motion.div 
-                            animate={{ y: [0, 15, 0] }}
-                            transition={{ repeat: Infinity, duration: 2.5 }}
-                            className="mt-20 flex flex-col items-center gap-4 text-white/20 cursor-pointer hover:text-glacier-teal transition-colors"
-                        >
-                            <span className="font-nohemi text-[10px] uppercase tracking-[0.3em]">Identify Gaps</span>
-                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
-                                <FaSearch className="text-lg" />
+                        <div className="mt-6 flex flex-col items-center gap-1.5 text-white/30 cursor-pointer hover:text-glacier-teal transition-colors">
+                            <span className="font-nohemi text-[9px] uppercase tracking-[0.25em]">Identify Gaps</span>
+                            <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center">
+                                <FaSearch className="text-xs" />
                             </div>
-                        </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/*  Analytical Grid: The 6 System Gaps in a 2x3 grid */}
-            <section className="py-12 px-6 md:px-12 bg-white flex justify-center text-center relative overflow-hidden">
-                <div className="absolute left-8 top-10 text-glacier-teal/10 pointer-events-none hidden md:block">
-                    <GapDoodle type="peak" className="w-28 h-28 rotate-[-8deg]" />
+            {/* Analytical Grid: High-Density 3-Column Layout */}
+            <section className="py-12 px-4 md:px-8 bg-white relative overflow-hidden">
+                {/* Embedded Accent Ambient Doodles */}
+                <div className="absolute left-4 top-6 text-glacier-teal/10 pointer-events-none hidden md:block">
+                    <GapDoodle type="peak" className="w-20 h-20 rotate-[-8deg]" />
                 </div>
-                <div className="absolute right-6 top-28 text-glacier-crimson/10 pointer-events-none hidden lg:block">
-                    <GapDoodle type="spark" className="w-24 h-24 rotate-12" />
-                </div>
-                <div className="absolute left-1/2 bottom-10 -translate-x-1/2 text-glacier-navy/5 pointer-events-none hidden md:block">
-                    <GapDoodle type="rings" className="w-40 h-40" />
+                <div className="absolute right-4 top-16 text-glacier-crimson/10 pointer-events-none hidden lg:block">
+                    <GapDoodle type="spark" className="w-16 h-16 rotate-12" />
                 </div>
 
-                <div className="max-w-5xl mx-auto w-full relative z-10">
-                    <div className="mb-10 relative">
-                        <h2 className="text-2xl md:text-3xl font-nohemi text-glacier-navy tracking-tight leading-none">
-                            The System <span className="text-glacier-teal italic">Gap</span>
+                <div className="max-w-6xl mx-auto w-full relative z-10">
+                    <div className="mb-8 text-center">
+                        <h2 className="text-2xl md:text-3xl font-nohemi font-bold text-glacier-navy tracking-tight">
+                            The System <span className="text-glacier-teal italic font-normal">Gap</span>
                         </h2>
-                        <div className="mt-5 flex justify-center">
-                            <div className="text-glacier-teal/25">
-                                <GapDoodle type="slope" className="w-28 h-10" />
-                            </div>
+                        <div className="mt-3 flex justify-center text-glacier-teal/20">
+                            <GapDoodle type="slope" className="w-20 h-6" />
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {gapCards.map((gap, idx) => (
                             <motion.div 
                                 key={idx}
                                 initial={{ opacity: 0, y: 15 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.05 }}
-                                className="bg-glacier-offwhite p-8 rounded-[2rem] shadow-2xl shadow-glacier-navy/5 border border-white text-left group hover:bg-glacier-navy hover:text-white transition-all duration-500 relative overflow-hidden flex flex-col items-center text-center"
+                                transition={{ delay: idx * 0.04 }}
+                                className="bg-glacier-offwhite p-5 md:p-6 rounded-2xl border border-glacier-light/40 shadow-sm text-center group hover:bg-glacier-navy hover:text-white transition-all duration-300 relative overflow-hidden flex flex-col items-center"
                             >
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-glacier-teal/10 rounded-full -mr-10 -mt-10 group-hover:scale-[3] transition-transform duration-1000"></div>
-                                <div className="absolute right-4 bottom-4 text-glacier-teal/15 group-hover:text-white/10 transition-colors duration-500">
-                                    <GapDoodle type={gap.doodle} className="w-16 h-16 md:w-20 md:h-20" />
+                                <div className="absolute top-0 right-0 w-16 h-16 bg-glacier-teal/5 rounded-full -mr-8 -mt-8 group-hover:scale-[3.5] transition-transform duration-700" />
+                                
+                                {/* Background Decorative Markings */}
+                                <div className="absolute right-3 bottom-3 text-glacier-teal/10 group-hover:text-white/5 transition-colors duration-300">
+                                    <GapDoodle type={gap.doodle} className="w-14 h-14" />
                                 </div>
-                                <div className="absolute left-4 top-5 text-glacier-navy/10 group-hover:text-white/10 transition-colors duration-500">
-                                    <GapDoodle type="trace" className="w-10 h-10" />
+                                <div className="absolute left-3 top-4 text-glacier-navy/5 group-hover:text-white/5 transition-colors duration-300">
+                                    <GapDoodle type="trace" className="w-7 h-7" />
                                 </div>
 
-                                <div className="relative z-10 flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-glacier-teal text-xl mb-4 shadow-sm group-hover:bg-glacier-teal group-hover:text-white transition-colors duration-300 border border-black/5">
+                                <div className="relative z-10 flex flex-col items-center w-full">
+                                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-glacier-teal text-base mb-3 shadow-sm group-hover:bg-glacier-teal group-hover:text-white transition-colors duration-300 border border-glacier-light/40">
                                         {gap.icon}
                                     </div>
-                                    <h3 className="text-lg md:text-xl font-nohemi text-glacier-navy mb-2 group-hover:text-white transition-colors">{gap.title}</h3>
-                                    <div className="mb-3 text-glacier-teal/40 group-hover:text-white/25 transition-colors duration-300">
-                                        <GapDoodle type={gap.doodle} className="w-12 h-4" />
+                                    
+                                    <h3 className="text-base font-nohemi font-bold text-glacier-navy mb-1 group-hover:text-white transition-colors tracking-tight">{gap.title}</h3>
+                                    
+                                    <div className="mb-2 text-glacier-teal/30 group-hover:text-white/20 transition-colors duration-300">
+                                        <GapDoodle type={gap.doodle} className="w-10 h-3" />
                                     </div>
-                                    <p className="text-xs font-light font-cabin leading-relaxed group-hover:text-white/80 transition-colors">
+                                    
+                                    <p className="text-xs text-glacier-warmGrey group-hover:text-white/80 font-cabin leading-relaxed">
                                         {gap.desc}
                                     </p>
                                 </div>
@@ -155,33 +155,34 @@ const GapPage = () => {
                 </div>
             </section>
 
-            <section className="py-40 px-6 bg-glacier-navy text-center relative overflow-hidden">
+            {/* 📣 Key Statement Callout Panel */}
+            <section className="py-14 px-6 bg-glacier-navy text-center relative overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none opacity-10">
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-glacier-crimson via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-glacier-crimson via-transparent to-transparent" />
                 </div>
 
                 <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
-                    <FaLink className="text-glacier-teal text-5xl mb-8" />
-                    <h3 className="text-3xl md:text-5xl font-nohemi text-white mb-8 tracking-tight leading-[1.1]">
+                    <FaLink className="text-glacier-teal text-3xl mb-4" />
+                    <h3 className="text-xl md:text-3xl font-nohemi text-white mb-5 tracking-tight max-w-2xl leading-snug">
                         &quot;Preparedness has no clear owner, <br className="hidden md:block"/> and communities pay the price.&quot;
                     </h3>
-                    <p className="text-glacier-teal text-xl md:text-2xl font-bold uppercase tracking-[0.2em] font-nohemi italic border-t border-white/10 pt-8 mt-4">
+                    <p className="text-glacier-teal text-base md:text-lg font-bold uppercase tracking-[0.15em] font-nohemi italic border-t border-white/10 pt-5 w-full max-w-xl">
                         &quot;Investing upstream protects life downstream.&quot;
                     </p>
                 </div>
             </section>
 
             {/* Navigation Strip to Prev/Next Section */}
-            <div className="bg-white py-12 border-t border-glacier-navy/5 px-6">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <a href="/why-glaciers-matter/crisis" className="flex items-center gap-4 text-glacier-navy/40 hover:text-glacier-teal transition-colors font-nohemi font-bold tracking-widest text-[10px] uppercase">
-                        <FaArrowRight className="text-lg rotate-180" />
+            <div className="bg-white py-5 border-t border-glacier-light/40 px-6">
+                <div className="max-w-6xl mx-auto flex justify-between items-center">
+                    <Link href="/why-glaciers-matter/crisis" className="flex items-center gap-2 text-glacier-navy/50 hover:text-glacier-teal transition-colors font-nohemi font-bold tracking-widest text-[10px] uppercase group">
+                        <FaArrowRight className="text-[10px] rotate-180 transform transition-transform group-hover:-translate-x-0.5" />
                         <span>Prev: The Crisis</span>
-                    </a>
-                    <a href="/why-glaciers-matter/decade" className="flex items-center gap-4 text-glacier-navy hover:text-glacier-teal transition-colors font-nohemi font-bold tracking-widest text-[10px] uppercase">
+                    </Link>
+                    <Link href="/why-glaciers-matter/decade" className="flex items-center gap-2 text-glacier-navy hover:text-glacier-teal transition-colors font-nohemi font-bold tracking-widest text-[10px] uppercase group">
                         <span>Next: The Decisive Decade</span>
-                        <FaArrowRight className="text-lg" />
-                    </a>
+                        <FaArrowRight className="text-[10px] transform transition-transform group-hover:translate-x-0.5" />
+                    </Link>
                 </div>
             </div>
 
