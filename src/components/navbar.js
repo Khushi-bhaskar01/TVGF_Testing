@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const pathname = usePathname();
   const navRef = useRef(null);
+  const sidebarRef = useRef(null);
 
   const structuredPages = [
     { name: "Home", href: "/", subpages: [] },
@@ -93,7 +94,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      const isClickInsideNav = navRef.current && navRef.current.contains(event.target);
+      const isClickInsideSidebar = sidebarRef.current && sidebarRef.current.contains(event.target);
+      if (!isClickInsideNav && !isClickInsideSidebar) {
         setDesktopDropdown(null);
         setMobileDropdown(null);
         setIsOpen(false);
@@ -129,7 +132,7 @@ export default function Navbar() {
         ref={navRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`fixed w-full z-50 transition-all duration-500 font-cabin rounded-b-xl 
+        className={`fixed w-full z-[100] transition-all duration-500 font-cabin rounded-b-xl 
           ${isTransparent 
             ? "bg-transparent py-2 border-b border-white/10" 
             : "bg-white/95 backdrop-blur-md shadow-sm py-1 border-b border-gray-100"}`}
@@ -178,29 +181,45 @@ export default function Navbar() {
                     <AnimatePresence>
                       {page.subpages?.length > 0 && desktopDropdown === page.name && (
                         <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2, ease: "easeOut" }}
-                          className={`fixed left-0 w-full bg-white text-black shadow-lg border-t border-gray-100 z-50 
-                            ${isTransparent ? "top-[56px]" : "top-[48px]"}`}
+                          initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                          className={`absolute top-full w-80 z-[100] pt-2
+                            ${
+                              page.name === "Get Involved" || page.name === "Media" || page.name === "Learn"
+                                ? "right-0 origin-top-right"
+                                : "left-0 origin-top-left"
+                            }`}
                         >
-                          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                          <div className="bg-white text-black shadow-xl rounded-xl border border-gray-100/90 p-2">
+                            <div className="flex flex-col gap-1">
                               {page.subpages.map((subpage) => (
                                 <Link
                                   key={subpage.label}
                                   href={subpage.href}
                                   onClick={() => setDesktopDropdown(null)}
-                                  className="block group"
+                                  className={`flex flex-col p-2.5 rounded-lg transition-all duration-200 hover:bg-glacier-navy/[0.03] group
+                                    ${isLinkActive(subpage.href) ? "bg-glacier-navy/[0.02]" : ""}`}
                                 >
-                                  <h3 className={`text-glacier-navy font-semibold text-[15px] group-hover:text-glacier-teal transition-colors font-nohemi 
-                                    ${isLinkActive(subpage.href) ? "text-glacier-teal underline decoration-2 underline-offset-4" : "text-glacier-navy hover:text-glacier-teal"}`}>
-                                    {subpage.label}
-                                  </h3>
-                                  <p className="text-glacier-warmGrey text-sm font-cabin leading-snug group-hover:text-gray-900 transition-colors">
-                                    {subpage.desc}
-                                  </p>
+                                  <div className="flex items-center justify-between">
+                                    <span
+                                      className={`text-[13px] font-semibold transition-colors font-nohemi
+                                        ${isLinkActive(subpage.href) 
+                                          ? "text-glacier-teal font-bold" 
+                                          : "text-glacier-navy group-hover:text-glacier-teal"}`}
+                                    >
+                                      {subpage.label}
+                                    </span>
+                                    <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 -translate-x-1 transition-all duration-200 text-glacier-teal">
+                                      <ChevronDown size={12} className="-rotate-90" />
+                                    </span>
+                                  </div>
+                                  {subpage.desc && (
+                                    <p className="text-glacier-warmGrey text-[11px] font-cabin leading-relaxed mt-0.5 group-hover:text-gray-900 transition-colors">
+                                      {subpage.desc}
+                                    </p>
+                                  )}
                                 </Link>
                               ))}
                             </div>
@@ -268,6 +287,7 @@ export default function Navbar() {
 
             {/* Mobile Drawer Container - Set to matching maximum z-index layer */}
             <motion.div
+              ref={sidebarRef}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -278,34 +298,29 @@ export default function Navbar() {
                 {structuredPages.map((link) => (
                   <div key={link.name}>
                     {link.subpages?.length > 0 ? (
-                      <div className="w-full flex justify-between items-center py-2">
-                        <Link
-                          href={link.href}
-                          onClick={() => setIsOpen(false)}
-                          className={`flex-grow text-left font-medium text-base font-nohemi transition-colors ${isLinkActive(link.href)
+                      <button
+                        onClick={() =>
+                          setMobileDropdown((prev) => (prev === link.name ? null : link.name))
+                        }
+                        className="w-full flex justify-between items-center py-2 text-left"
+                      >
+                        <span
+                          className={`font-medium text-base font-nohemi transition-colors ${isLinkActive(link.href)
                               ? "text-glacier-teal underline underline-offset-4"
                               : "text-white"
                             }`}
                         >
                           {link.name}
-                        </Link>
+                        </span>
 
-                        <button
-                          onClick={() =>
-                            setMobileDropdown((prev) => (prev === link.name ? null : link.name))
-                          }
-                          className="p-2 -mr-2 text-white hover:text-glacier-teal transition-colors"
-                          aria-label={`Toggle ${link.name} submenu`}
+                        <motion.span
+                          animate={{ rotate: mobileDropdown === link.name ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-white"
                         >
-                          <motion.span
-                            animate={{ rotate: mobileDropdown === link.name ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="inline-block"
-                          >
-                            <ChevronDown size={16} />
-                          </motion.span>
-                        </button>
-                      </div>
+                          <ChevronDown size={16} />
+                        </motion.span>
+                      </button>
                     ) : (
                       <Link
                         href={link.href}
@@ -329,7 +344,12 @@ export default function Navbar() {
                           className="overflow-hidden"
                         >
                           <div className="ml-4 mt-1 space-y-1 pb-1 border-l-2 border-white/20 pl-3">
-                            {link.subpages.map((subpage) => (
+                            {[
+                              ...(link.href && !link.subpages.some(sp => sp.href === link.href)
+                                ? [{ label: `${link.name} Overview`, href: link.href }]
+                                : []),
+                              ...link.subpages
+                            ].map((subpage) => (
                               <Link
                                 key={subpage.label}
                                 href={subpage.href}
