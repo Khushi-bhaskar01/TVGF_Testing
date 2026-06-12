@@ -73,23 +73,14 @@ const GapPage = () => {
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-4 bg-white/5 px-5 py-2 rounded-full border border-white/10 backdrop-blur-md">
-                            Chapter 02: Preparedness
-                        </span>
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-nohemi font-bold text-white leading-tight tracking-tighter">
-                            The Orphaned <br />
+                            The Preparedness <br />
                             <span className="text-glacier-teal italic font-normal text-2xl md:text-4xl lg:text-5xl">Crisis</span>
                         </h1>
                         <p className="text-sm md:text-base text-white/60 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
                             Preparedness for glacier loss sits between climate mitigation, disaster response, and development.
                         </p>
 
-                        <div className="mt-6 flex flex-col items-center gap-1.5 text-white/30 cursor-pointer hover:text-glacier-teal transition-colors">
-                            <span className="font-nohemi text-[9px] uppercase tracking-[0.25em]">Identify Gaps</span>
-                            <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center">
-                                <FaSearch className="text-xs" />
-                            </div>
-                        </div>
                     </motion.div>
                 </div>
             </section>

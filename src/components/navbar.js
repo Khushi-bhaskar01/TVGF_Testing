@@ -74,7 +74,7 @@ export default function Navbar() {
       subpages: [
         { label: "Partner With Us", href: "/get-involved/partner", desc: "Institutional and funding partnerships." },
         { label: "Volunteer & Internships", href: "/get-involved/volunteer", desc: "Contribute your skills to the cause." },
-        { label: "Join as Glacier Guardian", href: "/get-involved/glacier-guardian", desc: "Become part of the community." }
+        { label: "Join as The Voice Of Glaciers", href: "/get-involved/glacier-guardian", desc: "Become part of the community." }
       ]
     }
   ];

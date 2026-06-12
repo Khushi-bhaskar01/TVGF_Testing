@@ -34,40 +34,40 @@ export default function GlacierGuardianPage() {
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFA] text-glacier-navy">
       <Navbar />
 
-      <main className="pt-20">
-        <section className="pt-24 pb-20 px-6 md:px-20 max-w-7xl mx-auto text-center">
+      <main className="pt-12">
+        <section className="pt-16 pb-12 px-6 md:px-12 max-w-7xl mx-auto text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="hero-el font-nohemi text-5xl md:text-8xl font-bold leading-[0.95] mb-8 tracking-tight">
+            <h1 className="hero-el font-nohemi text-4xl md:text-6xl font-bold leading-[0.95] mb-4 tracking-tight">
               Glacier <br /><span className="text-glacier-teal">Guardian.</span>
             </h1>
-            <p className="hero-el font-cabin text-xl md:text-2xl text-glacier-navy/70 leading-relaxed max-w-3xl mx-auto">
+            <p className="hero-el font-cabin text-lg md:text-xl text-glacier-navy/70 leading-relaxed max-w-3xl mx-auto">
               The Glacier Guardians Network is the community backbone of the entire TVGF ecosystem. We are a global movement of individuals dedicated to protecting Earth&apos;s cryosphere.
             </p>
           </div>
         </section>
 
-        <section className="px-6 md:px-20 max-w-7xl mx-auto mb-32">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
+        <section className="px-6 md:px-12 max-w-7xl mx-auto mb-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-nohemi text-4xl font-bold mb-10 leading-tight">Who can <br /><span className="text-glacier-teal">Join?</span></h2>
+              <h2 className="font-nohemi text-3xl font-bold mb-6 leading-tight">Who can <br /><span className="text-glacier-teal">Join?</span></h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {profiles.map((p, i) => (
-                  <div key={i} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="w-2 h-2 rounded-full bg-glacier-teal" />
                     <span className="font-cabin font-bold text-sm text-glacier-navy/80">{p}</span>
                   </div>
                 ))}
               </div>
-              <p className="mt-10 font-cabin text-lg text-glacier-navy/60 leading-relaxed">
+              <p className="mt-6 font-cabin text-base text-glacier-navy/60 leading-relaxed">
                 ...anyone who wants to actively contribute to glacier preparedness and be a witness to the changing cryosphere.
               </p>
             </div>
             
-            <div className="bg-glacier-teal/[0.03] p-12 md:p-16 rounded-[40px] border border-glacier-teal/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-glacier-teal/10 rounded-full blur-[80px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+            <div className="bg-glacier-teal/[0.03] p-8 md:p-10 rounded-[24px] border border-glacier-teal/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-glacier-teal/10 rounded-full blur-[60px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
               
-              <h2 className="font-nohemi text-2xl font-bold mb-10 uppercase tracking-widest text-glacier-teal/60">Membership Meaning</h2>
-              <ul className="space-y-10 font-cabin relative z-10">
+              <h2 className="font-nohemi text-xl font-bold mb-6 uppercase tracking-widest text-glacier-teal/60">Membership Meaning</h2>
+              <ul className="space-y-6 font-cabin relative z-10">
                 <li className="flex gap-6">
                   <span className="font-nohemi text-glacier-teal/30 font-bold text-3xl pt-1">01</span>
                   <div>
@@ -95,13 +95,13 @@ export default function GlacierGuardianPage() {
         </section>
 
         {/* Guardian Network Redirect - REDESIGNED */}
-        <section className="px-6 md:px-20 max-w-7xl mx-auto mb-40">
-          <div className="max-w-4xl mx-auto bg-white p-12 md:p-24 rounded-[4rem] border border-gray-100 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden text-center">
-            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-glacier-teal/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+        <section className="px-6 md:px-12 max-w-7xl mx-auto mb-20">
+          <div className="max-w-4xl mx-auto bg-white p-10 md:p-16 rounded-[2rem] border border-gray-100 shadow-xl relative overflow-hidden text-center">
+            <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-glacier-teal/5 rounded-full blur-[80px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
             
             <div className="relative z-10">
-              <h2 className="font-nohemi text-5xl md:text-7xl font-bold mb-10 tracking-tighter leading-none">Join the <span className="text-glacier-teal italic">Network.</span></h2>
-              <p className="font-cabin text-xl text-glacier-navy/70 mb-14 leading-relaxed font-light">
+              <h2 className="font-nohemi text-4xl md:text-5xl font-bold mb-6 tracking-tighter leading-none">Join the <span className="text-glacier-teal italic">Network.</span></h2>
+              <p className="font-cabin text-lg text-glacier-navy/70 mb-8 leading-relaxed font-light">
                 Become a sentinel for the cryosphere. Our global network of Guardians is the frontline of glacier preparedness. Start your journey by filling out the official registration form.
               </p>
               
@@ -109,7 +109,7 @@ export default function GlacierGuardianPage() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block px-16 py-6 bg-glacier-teal text-white rounded-full font-nohemi font-bold tracking-[0.2em] uppercase text-xs hover:bg-glacier-navy transition-all duration-500 shadow-2xl hover:-translate-y-1"
+                className="inline-block px-10 py-4 bg-glacier-teal text-white rounded-full font-nohemi font-bold tracking-[0.2em] uppercase text-[10px] hover:bg-glacier-navy transition-all duration-500 shadow-xl hover:-translate-y-1"
               >
                 Join The Movement
               </a>

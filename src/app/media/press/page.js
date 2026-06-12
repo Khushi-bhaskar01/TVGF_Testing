@@ -89,28 +89,27 @@ export default function PressAndNewsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-40 pb-20 px-6 md:px-12 max-w-5xl mx-auto border-b border-glacier-navy/10 w-full">
+      <section className="pt-24 pb-8 px-4 md:px-8 max-w-5xl mx-auto border-b border-glacier-navy/10 w-full">
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
 
-          <h1 className="text-5xl md:text-7xl font-nohemi font-bold text-glacier-navy leading-tight tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-nohemi font-bold text-glacier-navy leading-tight tracking-tight mb-3">
             Press & News.
           </h1>
-          <p className="text-lg md:text-xl text-glacier-warmGrey leading-relaxed font-cabin max-w-2xl">
+          <p className="text-base md:text-lg text-glacier-warmGrey leading-relaxed font-cabin max-w-2xl">
             Official announcements, media appearances, and coverage of The Voice of Glaciers Foundation and our leadership.
           </p>
         </div>
       </section>
 
       {/* Press Contact */}
-      <section className="py-12 px-6 md:px-12 border-b border-glacier-navy/10 bg-white">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="py-6 px-4 md:px-8 border-b border-glacier-navy/10 bg-white">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-nohemi font-bold text-glacier-navy mb-2">Media & Press Inquiries</h2>
-            <p className="font-cabin text-sm text-glacier-warmGrey mb-4">
+            <h2 className="text-lg font-nohemi font-bold text-glacier-navy mb-1">Media & Press Inquiries</h2>
+            <p className="font-cabin text-sm text-glacier-warmGrey mb-2">
               For interviews, comments, or press materials, please contact our media desk.
             </p>
             <div className="flex flex-col gap-1">
-              <span className="font-bold font-cabin text-glacier-navy text-sm">Media Contact: Romola Butalia</span>
               <a href="mailto:thevoiceofglaciers@gmail.com" className="text-sm font-cabin text-glacier-teal hover:underline">
                 thevoiceofglaciers@gmail.com
               </a>
@@ -120,7 +119,7 @@ export default function PressAndNewsPage() {
           <div className="flex-shrink-0 w-full md:w-auto">
             <a
               href="#"
-              className="group w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-glacier-offwhite border border-glacier-navy/10 text-glacier-navy hover:bg-glacier-navy hover:text-white text-xs font-bold tracking-widest uppercase transition-all duration-300 shadow-sm"
+              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-glacier-offwhite border border-glacier-navy/10 text-glacier-navy hover:bg-glacier-navy hover:text-white text-[10px] font-bold tracking-widest uppercase transition-all duration-300 shadow-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
               Download Press Kit
@@ -130,26 +129,26 @@ export default function PressAndNewsPage() {
       </section>
 
       {/* Coverage archive */}
-      <section className="py-20 px-6 md:px-12 flex-grow">
+      <section className="py-8 px-4 md:px-8 flex-grow">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
             {pressData.map((item) => (
               <article
                 key={item.id}
-                className="bg-white p-8 md:p-10 border border-glacier-navy/10 hover:border-glacier-navy/30 hover:shadow-md transition-all duration-300 group flex flex-col md:flex-row gap-8 md:gap-12"
+                className="bg-white p-5 md:p-6 border border-glacier-navy/10 hover:border-glacier-navy/30 hover:shadow-sm transition-all duration-300 group flex flex-col md:flex-row gap-5 md:gap-8"
               >
                 {/* Meta Column */}
-                <div className="md:w-1/4 flex flex-col gap-4 border-b md:border-b-0 md:border-r border-glacier-navy/10 pb-6 md:pb-0 md:pr-8">
+                <div className="md:w-1/4 flex flex-col gap-2 border-b md:border-b-0 md:border-r border-glacier-navy/10 pb-4 md:pb-0 md:pr-6">
                   <div>
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-glacier-navy/50 block mb-1">Publication</span>
-                    <strong className="font-cabin text-glacier-navy text-base">{item.publication}</strong>
+                    <span className="text-[9px] font-bold tracking-widest uppercase text-glacier-navy/50 block mb-0.5">Publication</span>
+                    <strong className="font-cabin text-glacier-navy text-sm md:text-base">{item.publication}</strong>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-glacier-navy/50 block mb-1">Date</span>
-                    <span className="font-cabin text-glacier-warmGrey text-sm">{formatDate(item.date)}</span>
+                    <span className="text-[9px] font-bold tracking-widest uppercase text-glacier-navy/50 block mb-0.5">Date</span>
+                    <span className="font-cabin text-glacier-warmGrey text-xs md:text-sm">{formatDate(item.date)}</span>
                   </div>
-                  <div className="mt-auto pt-4">
-                    <span className="inline-block bg-glacier-offwhite text-glacier-navy text-[10px] font-bold px-3 py-1 uppercase tracking-wider border border-glacier-navy/5">
+                  <div className="mt-2 md:mt-auto pt-2">
+                    <span className="inline-block bg-glacier-offwhite text-glacier-navy text-[9px] font-bold px-2 py-1 uppercase tracking-wider border border-glacier-navy/5">
                       {item.type}
                     </span>
                   </div>
@@ -157,10 +156,10 @@ export default function PressAndNewsPage() {
 
                 {/* Content Column */}
                 <div className="md:w-3/4 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-nohemi font-bold text-glacier-navy mb-4 group-hover:text-glacier-teal transition-colors leading-tight">
+                  <h3 className="text-lg md:text-xl font-nohemi font-bold text-glacier-navy mb-2 group-hover:text-glacier-teal transition-colors leading-tight">
                     {item.title}
                   </h3>
-                  <p className="font-cabin text-glacier-warmGrey leading-relaxed mb-8">
+                  <p className="font-cabin text-sm text-glacier-warmGrey leading-relaxed mb-4">
                     {item.summary}
                   </p>
 
@@ -168,7 +167,7 @@ export default function PressAndNewsPage() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-glacier-navy hover:text-glacier-teal transition-colors w-fit"
+                    className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase text-glacier-navy hover:text-glacier-teal transition-colors w-fit"
                   >
                     Read Full Feature <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </a>

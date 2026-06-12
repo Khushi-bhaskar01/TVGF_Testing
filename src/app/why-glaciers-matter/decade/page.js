@@ -91,23 +91,13 @@ const DecadePage = () => {
 
         <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block text-glacier-lightTeal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-4 bg-white/5 px-5 py-2 rounded-full border border-white/10 backdrop-blur-md">
-              The Critical Window
-            </span>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-nohemi font-bold text-white leading-tight tracking-tighter">
               The Decisive <br />
               <span className="text-glacier-lightTeal italic font-normal text-2xl md:text-4xl lg:text-5xl">Decade</span>
             </h1>
             <p className="text-sm md:text-base text-white/50 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
-              The years 2025–2034 represent the final threshold for cryospheric stability globally.
+              The years 2025-2034 represent the final threshold for cryospheric stability globally.
             </p>
-
-            <div onClick={scrollToFirst} className="mt-6 flex flex-col items-center gap-1.5 text-white/30 cursor-pointer hover:text-glacier-lightTeal transition-colors">
-              <span className="font-nohemi text-[9px] uppercase tracking-[0.25em]">Critical Timeline</span>
-              <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center">
-                <FaCalendarAlt className="text-xs" />
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

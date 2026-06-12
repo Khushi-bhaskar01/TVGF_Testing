@@ -141,41 +141,107 @@ export default function OurStory() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
 
-                    {/* Mission & Vision Redesign - Compact */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24 items-stretch">
+                    {/* Mission & Vision Redesign - Bento Infographic Layout */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6 mb-24">
+                        
+                        {/* 👁️ THE VISION (Photographic & Floating Tags) */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-glacier-offwhite p-8 rounded-[2rem] border border-glacier-navy/5 flex flex-col justify-between gap-6 group hover:bg-glacier-navy hover:text-white transition-all duration-700 shadow-2xl relative overflow-hidden"
+                            className="relative bg-glacier-navy rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden group min-h-[400px] flex flex-col justify-end"
                         >
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-glacier-teal/10 rounded-full blur-3xl group-hover:bg-glacier-teal/20 transition-all"></div>
-                            <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-glacier-teal flex items-center justify-center text-white text-2xl shadow-xl group-hover:bg-white group-hover:text-glacier-navy transition-all duration-500">
-                                <FaCompass />
+                            {/* Photographic Background */}
+                            <div className="absolute inset-0 z-0">
+                                <img src="/1.jpg" alt="Glacier Vision" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out opacity-60" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-glacier-navy via-glacier-navy/80 to-glacier-navy/10 mix-blend-multiply" />
                             </div>
-                            <div>
-                                <h2 className="text-[10px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Vision</h2>
-                                <p className="text-xl md:text-3xl text-glacier-navy font-nohemi italic leading-tight group-hover:text-white tracking-tighter">
+
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-10 h-10 rounded-xl bg-glacier-teal/20 backdrop-blur-md flex items-center justify-center text-white border border-white/10 shadow-lg">
+                                        <FaCompass className="text-xl" />
+                                    </div>
+                                    <h2 className="text-4xl font-nohemi text-white  uppercase font-bold drop-shadow-md">The Vision</h2>
+                                </div>
+                                <p className="text-2xl md:text-3xl text-white font-nohemi italic leading-tight tracking-tighter drop-shadow-xl mb-8">
                                     &quot;A world where protected glaciers secure water security and climate stability.&quot;
                                 </p>
+
+                                {/* Floating Infographic Tags */}
+                                <div className="flex flex-wrap gap-3">
+                                    <div className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest shadow-lg flex items-center gap-2 group-hover:-translate-y-1 transition-transform duration-300 delay-100">
+                                         Water Security
+                                    </div>
+                                    <div className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest shadow-lg flex items-center gap-2 group-hover:-translate-y-1 transition-transform duration-300 delay-200">
+                                         Climate Stability
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
 
+                        {/* 🎯 THE MISSION (Infographic Flowchart) */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-glacier-navy p-8 rounded-[2rem] text-white flex flex-col justify-between gap-6 shadow-2xl relative overflow-hidden group hover:bg-glacier-teal transition-all duration-700"
+                            className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-glacier-navy/5 flex flex-col justify-between relative overflow-hidden group"
                         >
-                            <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-all"></div>
-                            <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-glacier-teal text-2xl border border-white/10 group-hover:bg-white transition-all duration-500 shadow-xl">
-                                <FaBalanceScale />
-                            </div>
-                            <div>
-                                <h2 className="text-[10px] font-nohemi text-glacier-teal tracking-[0.4em] uppercase mb-3 group-hover:text-white/60">The Mission</h2>
-                                <p className="text-base md:text-lg text-white font-cabin font-light leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
-                                    To enable mountain communities to adapt by connecting science, local knowledge, and collective action through our unique SPACE framework.
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-glacier-teal/5 rounded-full blur-[80px] pointer-events-none group-hover:scale-150 transition-transform duration-[3s]" />
+                            
+                            <div className="relative z-10 mb-8">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-10 h-10 rounded-xl bg-glacier-navy flex items-center justify-center text-glacier-teal border border-glacier-navy/10 shadow-lg">
+                                        <FaBalanceScale className="text-xl" />
+                                    </div>
+                                    <h2 className="text-4xl font-nohemi text-glacier-teal uppercase font-bold">The Mission</h2>
+                                </div>
+                                <p className="text-lg md:text-xl text-glacier-navy font-cabin font-light leading-relaxed">
+                                    To enable mountain communities to adapt by connecting <strong className="font-bold text-glacier-teal">science</strong>, <strong className="font-bold text-blue-500">local knowledge</strong>, and <strong className="font-bold text-indigo-500">collective action</strong> through our unique SPACE framework.
                                 </p>
+                            </div>
+
+                            {/* Mini-Infographic Flowchart */}
+                            <div className="relative z-10 mt-auto bg-glacier-offwhite rounded-2xl p-6 border border-glacier-navy/5 shadow-inner">
+                                <span className="block text-[9px] uppercase tracking-[0.3em] font-bold text-glacier-navy/40 mb-6 text-center">Our Action Flow</span>
+                                
+                                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    {/* Step 1 */}
+                                    <div className="flex flex-col items-center text-center w-full sm:w-1/3">
+                                        <div className="w-12 h-12 rounded-full bg-glacier-teal/10 flex items-center justify-center text-glacier-teal mb-3 relative">
+                                            <FaMicroscope className="text-lg" />
+                                        </div>
+                                        <span className="font-nohemi font-bold text-glacier-navy text-sm">Science</span>
+                                    </div>
+
+                                    {/* Connector */}
+                                    <div className="hidden sm:block flex-1 h-[2px] bg-gradient-to-r from-glacier-teal via-blue-400 to-indigo-400 opacity-50 relative">
+                                        <div className="absolute -top-1 right-0 w-2 h-2 border-t-2 border-r-2 border-indigo-400 rotate-45 transform translate-x-1" />
+                                    </div>
+                                    <div className="sm:hidden w-[2px] h-6 bg-gradient-to-b from-glacier-teal to-blue-400 opacity-50" />
+
+                                    {/* Step 2 */}
+                                    <div className="flex flex-col items-center text-center w-full sm:w-1/3">
+                                        <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 mb-3 relative">
+                                            <FaGraduationCap className="text-lg" />
+                                        </div>
+                                        <span className="font-nohemi font-bold text-glacier-navy text-sm">Knowledge</span>
+                                    </div>
+
+                                    {/* Connector */}
+                                    <div className="hidden sm:block flex-1 h-[2px] bg-gradient-to-r from-blue-400 to-indigo-500 opacity-50 relative">
+                                        <div className="absolute -top-1 right-0 w-2 h-2 border-t-2 border-r-2 border-indigo-500 rotate-45 transform translate-x-1" />
+                                    </div>
+                                    <div className="sm:hidden w-[2px] h-6 bg-gradient-to-b from-blue-400 to-indigo-500 opacity-50" />
+
+                                    {/* Step 3 */}
+                                    <div className="flex flex-col items-center text-center w-full sm:w-1/3">
+                                        <div className="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500 mb-3 relative">
+                                            <FaUsers className="text-lg" />
+                                        </div>
+                                        <span className="font-nohemi font-bold text-glacier-navy text-sm">Action</span>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     </div>

@@ -144,7 +144,7 @@ export default function VisualMediaPage() {
       <Navbar />
 
       {/* Hero Section with Grid Background */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 w-full border-b border-glacier-navy/10 overflow-hidden text-center">
+      <section className="relative h-[50vh] min-h-[350px] flex flex-col justify-center px-6 md:px-12 w-full border-b border-glacier-navy/10 overflow-hidden text-center">
         
         {/* Background Grid */}
         <div className="absolute inset-0 flex flex-wrap overflow-hidden bg-glacier-navy/5">
@@ -159,7 +159,7 @@ export default function VisualMediaPage() {
                 className="w-full h-full object-cover grayscale opacity-60 transition-all duration-1000 ease-in-out group-hover:grayscale-0 group-hover:opacity-100"
               />
               {/* Overlay that dims the image until hovered */}
-              <div className="absolute inset-0 bg-glacier-offwhite/70 transition-opacity duration-1000 ease-in-out group-hover:opacity-0 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-glacier-offwhite/10 transition-opacity duration-1000 ease-in-out group-hover:opacity-0 pointer-events-none"></div>
             </div>
           ))}
 
@@ -168,8 +168,8 @@ export default function VisualMediaPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-30 max-w-5xl w-full mx-auto animate-in fade-in zoom-in-95 duration-1000 mt-12 pointer-events-none flex flex-col items-center">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-nohemi font-bold text-glacier-navy leading-[0.85] tracking-tight drop-shadow-sm">
+        <div className="relative z-30 max-w-5xl w-full mx-auto animate-in fade-in zoom-in-95 duration-1000 mt-8 pointer-events-none flex flex-col items-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-nohemi font-bold text-glacier-navy leading-[0.85] tracking-tight drop-shadow-sm">
             Photography <br className="hidden md:block" />& Film.
           </h1>
         </div>
@@ -194,7 +194,7 @@ export default function VisualMediaPage() {
           <div className="lg:w-1/2 w-full">
             <div className="w-full aspect-video bg-glacier-navy rounded-2xl overflow-hidden shadow-2xl border border-glacier-navy/10 relative transform hover:scale-[1.02] transition-transform duration-500 group">
               <iframe 
-                src="https://www.youtube.com/embed/FJ0R7HJmDrs?si=bajN09ZaK6PIq9E6&amp;start=19462" 
+                src="https://www.youtube.com/embed/XerQnwgD4Xc" 
                 title="TEDxGateway Talk - Anurag Maloo"
                 className="absolute inset-0 w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

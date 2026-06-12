@@ -70,9 +70,9 @@ export default function GetInvolvedPage() {
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFA] text-glacier-navy">
       <Navbar />
       
-      <main className="bg-glacier-offwhite pb-12">
+      <main className="bg-glacier-offwhite pb-6">
         {/* 🏔️ Premium Cinematic Hero Section */}
-<section className="relative pt-32 pb-20 px-6 md:px-12 xl:px-16 overflow-hidden bg-[#F8FAFA] border-b border-slate-100">
+<section className="relative pt-24 pb-12 px-4 md:px-8 xl:px-12 overflow-hidden bg-[#F8FAFA] border-b border-slate-100">
   
   {/* 🌊 Glacier Video Ambient Layer */}
   <div className="absolute pointer-events-none overflow-hidden">
@@ -91,21 +91,21 @@ export default function GetInvolvedPage() {
   {/* Decorative Fine Interface Lines */}
 
   {/* Foreground Layout Container */}
-  <div className="max-w-7xl mx-auto relative z-10 pl-0 lg:pl-10">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+  <div className="max-w-7xl mx-auto relative z-10 pl-0 lg:pl-6">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
       
       {/* Left Column: Heading & Framework Tag */}
-      <div className="lg:col-span-7 space-y-6">
+      <div className="lg:col-span-7 space-y-4">
         {/* Micro Interaction Badge */}
-        <div className="hero-animate inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white/60 border border-slate-200/80 backdrop-blur-md rounded-full shadow-sm">
+        <div className="hero-animate inline-flex items-center gap-2 px-3 py-1 bg-white/60 border border-slate-200/80 backdrop-blur-md rounded-full shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-glacier-teal animate-pulse" />
-          <span className="font-nohemi font-bold text-[10px] uppercase tracking-[0.2em] text-glacier-navy/80">
+          <span className="font-nohemi font-bold text-[9px] uppercase tracking-[0.2em] text-glacier-navy/80">
             TVGF Global Engagement 2026
           </span>
         </div>
 
         {/* Master Typographic Layout */}
-        <h1 className="hero-animate text-5xl md:text-7xl lg:text-8xl font-nohemi font-bold text-glacier-navy leading-[0.85] tracking-tighter">
+        <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-nohemi font-bold text-glacier-navy leading-[0.85] tracking-tighter">
           Join <br />
           <span className="relative inline-block text-glacier-teal">
             Forces
@@ -116,7 +116,7 @@ export default function GetInvolvedPage() {
       </div>
 
       {/* Right Column: Editorial Intro Text & Border-Fence Divider */}
-      <div className="lg:col-span-5 lg:pt-16 lg:pl-8 lg:border-l border-slate-200/60">
+      <div className="lg:col-span-5 lg:pt-6 lg:pl-6 lg:border-l border-slate-200/60">
         <p className="hero-animate font-cabin text-base md:text-lg lg:text-xl text-glacier-warmGrey/90 leading-relaxed font-light">
           Connect your path with ours. Together, we can build the actionable resilience infrastructure, policy structures, and data systems required to protect the world&apos;s frozen assets.
         </p>
@@ -135,39 +135,39 @@ export default function GetInvolvedPage() {
 </section>
 
         {/* Pathways Grid - Compressed spacing layout */}
-        <section className="px-6 md:px-12 max-w-7xl mx-auto py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <section className="px-4 md:px-8 max-w-7xl mx-auto py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {cards.map((card, i) => (
               <Link 
                 key={i} 
                 href={card.href}
                 ref={(el) => { cardsRef.current[i] = el; }}
-                className="group relative bg-white rounded-[2.5rem] p-8 lg:p-10 flex flex-col h-full border border-slate-100 shadow-xl hover:-translate-y-2 hover:shadow-glacier-teal/10 transition-all duration-500 ease-out overflow-hidden"
+                className="group relative bg-white rounded-[1.5rem] p-6 flex flex-col h-full border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-glacier-teal/10 transition-all duration-500 ease-out overflow-hidden"
               >
                 {/* Internal Decorative Glow */}
-                <div className="absolute -right-24 -bottom-24 w-48 h-48 bg-glacier-teal/5 rounded-full blur-3xl pointer-events-none z-0"></div>
+                <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-glacier-teal/5 rounded-full blur-2xl pointer-events-none z-0"></div>
                 
-                <div className="flex justify-between items-start mb-10 relative z-10">
-                   <div className="w-12 h-12 rounded-xl bg-glacier-offwhite border border-glacier-navy/5 flex items-center justify-center text-glacier-navy text-xl group-hover:bg-glacier-teal group-hover:text-white transition-all duration-400 shadow-sm">
+                <div className="flex justify-between items-start mb-6 relative z-10">
+                   <div className="w-10 h-10 rounded-xl bg-glacier-offwhite border border-glacier-navy/5 flex items-center justify-center text-glacier-navy text-lg group-hover:bg-glacier-teal group-hover:text-white transition-all duration-400 shadow-sm">
                       <span className="font-nohemi font-bold">{card.index}</span>
                    </div>
-                  <div className="w-10 h-10 rounded-full border border-glacier-navy/5 flex items-center justify-center text-glacier-navy group-hover:bg-glacier-navy group-hover:text-white transition-all duration-400">
-                    <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
+                  <div className="w-8 h-8 rounded-full border border-glacier-navy/5 flex items-center justify-center text-glacier-navy group-hover:bg-glacier-navy group-hover:text-white transition-all duration-400">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
                 
                 <div className="relative z-10 flex-grow">
-                  <h3 className="font-nohemi text-2xl lg:text-3xl font-bold mb-4 tracking-tighter text-glacier-navy group-hover:text-glacier-teal transition-colors">{card.title}</h3>
-                  <p className="font-cabin text-glacier-navy/60 text-sm md:text-base mb-6 leading-relaxed font-light">
+                  <h3 className="font-nohemi text-xl lg:text-2xl font-bold mb-2 tracking-tighter text-glacier-navy group-hover:text-glacier-teal transition-colors">{card.title}</h3>
+                  <p className="font-cabin text-glacier-navy/60 text-xs md:text-sm mb-4 leading-relaxed font-light">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto relative z-10 pt-4 border-t border-slate-50">
+                <div className="flex flex-wrap gap-1.5 mt-auto relative z-10 pt-3 border-t border-slate-50">
                   {card.tags.map((tag, t) => (
-                    <span key={t} className="text-[9px] font-nohemi font-bold uppercase tracking-[0.25em] px-3 py-1 bg-glacier-offwhite text-glacier-navy/40 rounded-full group-hover:bg-glacier-teal group-hover:text-white transition-all duration-400">
+                    <span key={t} className="text-[8px] font-nohemi font-bold uppercase tracking-[0.2em] px-2.5 py-1 bg-glacier-offwhite text-glacier-navy/50 rounded-full group-hover:bg-glacier-teal group-hover:text-white transition-all duration-400">
                       {tag}
                     </span>
                   ))}
@@ -178,28 +178,28 @@ export default function GetInvolvedPage() {
         </section>
 
         {/* Impact Band - Compacted and elegant */}
-        <section className="px-6 md:px-12 max-w-7xl mx-auto my-12">
-          <div className="w-full bg-[#0a1a2a] rounded-[2.5rem] py-16 px-8 text-center relative overflow-hidden shadow-xl">
+        <section className="px-4 md:px-8 max-w-7xl mx-auto my-6">
+          <div className="w-full bg-[#0a1a2a] rounded-[1.5rem] py-10 px-6 text-center relative overflow-hidden shadow-md">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-glacier-teal rotate-45 blur-[100px]"></div>
               <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500 rotate-45 blur-[100px]"></div>
             </div>
             
             <div className="relative z-10 max-w-3xl mx-auto">
-              <span className="inline-block text-glacier-teal font-nohemi font-bold text-[9px] uppercase tracking-[0.35em] mb-5 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+              <span className="inline-block text-glacier-teal font-nohemi font-bold text-[9px] uppercase tracking-[0.35em] mb-3 bg-white/5 px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">
                 The Urgency
               </span>
-              <h2 className="font-nohemi text-4xl md:text-5xl text-white font-bold mb-6 tracking-tighter leading-none">
+              <h2 className="font-nohemi text-3xl md:text-4xl text-white font-bold mb-4 tracking-tighter leading-none">
                 The glaciers <span className="italic font-light">won&apos;t wait.</span>
               </h2>
-              <p className="font-cabin text-white/60 text-sm md:text-base mb-8 max-w-xl mx-auto font-light leading-relaxed">
+              <p className="font-cabin text-white/60 text-xs md:text-sm mb-6 max-w-xl mx-auto font-light leading-relaxed">
                 Connect your path with ours. Together, we can build the resilience infrastructure required to protect the world&apos;s frozen assets.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-3.5 bg-glacier-teal text-white font-nohemi font-bold uppercase tracking-widest text-[11px] rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-400 text-center">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-6 py-2.5 bg-glacier-teal text-white font-nohemi font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-400 text-center">
                   Join The Movement
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-3.5 border border-white/20 text-white font-nohemi font-bold uppercase tracking-widest text-[11px] rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-400 backdrop-blur-md text-center">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxbQubbwUS2rdI3KRD9ZGbppWN5B6ZITGw7SmDHMG34c2CXw/viewform" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-6 py-2.5 border border-white/20 text-white font-nohemi font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-white hover:text-glacier-navy transition-all duration-400 backdrop-blur-md text-center">
                   Partner With Us
                 </a>
               </div>

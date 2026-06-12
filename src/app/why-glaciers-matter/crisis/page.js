@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
@@ -9,62 +9,119 @@ import { FaArrowRight, FaChartLine, FaUsers, FaLeaf, FaGlobe, FaCubes } from 're
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
+import { AreaChart, Area, ResponsiveContainer, Tooltip } from 'recharts';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ScrollAnimatedChart = ({ data, color, className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <motion.div
+      className={`w-full bg-slate-50/50 rounded-xl overflow-hidden border border-slate-100 p-2 flex flex-col ${className || 'h-28 mt-4'}`}
+      onViewportEnter={() => setIsVisible(true)}
+      viewport={{ once: true, margin: "-50px" }}
+    >
+      {isVisible && (
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+            <defs>
+              <linearGradient id={`colorValue-${color.replace('#', '')}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor={color} stopOpacity={0.4} />
+                <stop offset="95%" stopColor={color} stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Tooltip 
+              contentStyle={{ backgroundColor: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+              labelStyle={{ color: '#64748b', fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}
+              itemStyle={{ color: color, fontSize: '14px', fontWeight: 'bold' }}
+              cursor={{ stroke: '#cbd5e1', strokeWidth: 1, strokeDasharray: '3 3' }}
+              labelFormatter={(label) => `Year: ${label}`}
+            />
+            <Area 
+              type="monotone" 
+              dataKey="value" 
+              stroke={color} 
+              strokeWidth={3}
+              fillOpacity={1} 
+              fill={`url(#colorValue-${color.replace('#', '')})`} 
+              isAnimationActive={true}
+              animationDuration={1500}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      )}
+    </motion.div>
+  );
+};
 
 const CrisisPage = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray('.cascade-card');
-    cards.forEach((card, i) => {
-      gsap.fromTo(card, 
-        { opacity: 0, x: i % 2 === 0 ? -20 : 20 },
+    let ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray('.cascade-card');
+      gsap.fromTo(cards, 
+        { opacity: 0, y: 40 },
         { 
           opacity: 1, 
-          x: 0,
+          y: 0,
           duration: 0.8,
+          stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: card,
-            start: "top 90%",
+            trigger: containerRef.current,
+            start: "top 80%",
             toggleActions: "play none none reverse"
           }
         }
       );
-    });
+    }, containerRef);
+    return () => ctx.revert();
   }, []);
 
   const detailedCascade = [
     {
       title: "Accelerated Warming",
       data: "3x faster than global average.",
-      desc: "The Cryosphere is warming three times faster than the global average, signaling an urgent climate crisis."
+      desc: "The Cryosphere is warming three times faster than the global average, signaling an urgent climate crisis.",
+      chartData: [{ name: '1980', value: 0 }, { name: '1990', value: 0.5 }, { name: '2000', value: 1.2 }, { name: '2010', value: 2.1 }, { name: '2020', value: 3.5 }],
+      chartColor: "#ef4444" // red
     },
     {
       title: "Projected Melt",
       data: "50% melt by 2100.",
-      desc: "Half of the world's glaciers could disappear by 2100, threatening ecosystems, water supplies, and sea levels."
+      desc: "Half of the world's glaciers could disappear by 2100, threatening ecosystems, water supplies, and sea levels.",
+      chartData: [{ name: '2000', value: 100 }, { name: '2025', value: 85 }, { name: '2050', value: 70 }, { name: '2075', value: 60 }, { name: '2100', value: 50 }],
+      chartColor: "#3b82f6" // blue
     },
     {
       title: "Himalayan Decline",
       data: "40% ice volume lost since 2000.",
-      desc: "Himalayan glaciers are rapidly losing volume, fundamentally destabilising regional water systems."
+      desc: "Himalayan glaciers are rapidly losing volume, fundamentally destabilising regional water systems.",
+      chartData: [{ name: '2000', value: 100 }, { name: '2005', value: 92 }, { name: '2010', value: 81 }, { name: '2015', value: 72 }, { name: '2020', value: 60 }],
+      chartColor: "#3b82f6" // blue
     },
     {
       title: "Water Insecurity",
       data: "Over 2 billion lives at risk.",
-      desc: "More than 2 billion people rely on glacier-fed rivers like the Ganges, Indus, and Yangtze for water and food."
+      desc: "More than 2 billion people rely on glacier-fed rivers like the Ganges, Indus, and Yangtze for water and food.",
+      chartData: [{ name: '2000', value: 1.2 }, { name: '2010', value: 1.5 }, { name: '2020', value: 1.9 }, { name: '2030', value: 2.1 }, { name: '2040', value: 2.5 }],
+      chartColor: "#ef4444" // red
     },
     {
       title: "Glacial Flood Threat",
       data: "Increasing GLOF frequency.",
-      desc: "Glacial lake outburst floods (GLOFs) are putting lives, downstream infrastructure, and economies at extreme risk."
+      desc: "Glacial lake outburst floods (GLOFs) are putting lives, downstream infrastructure, and economies at extreme risk.",
+      chartData: [{ name: '1990', value: 5 }, { name: '2000', value: 12 }, { name: '2010', value: 28 }, { name: '2020', value: 45 }, { name: '2030', value: 65 }],
+      chartColor: "#ef4444" // red
     },
     {
       title: "Albedo Loss",
       data: "Reduced Earth's reflectivity.",
-      desc: "Melting glaciers reduce the planet's reflectivity, causing Earth to absorb more heat and warm even faster."
+      desc: "Melting glaciers reduce the planet's reflectivity, causing Earth to absorb more heat and warm even faster.",
+      chartData: [{ name: '1980', value: 100 }, { name: '1990', value: 96 }, { name: '2000', value: 88 }, { name: '2010', value: 75 }, { name: '2020', value: 60 }],
+      chartColor: "#3b82f6" // blue
     }
   ];
 
@@ -123,9 +180,7 @@ const CrisisPage = () => {
 
         <div className="max-w-7xl mx-auto relative z-10 w-full text-center px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-block text-glacier-teal font-nohemi font-bold tracking-[0.4em] text-[10px] uppercase mb-4 bg-white/5 px-5 py-2 rounded-full border border-white/10 backdrop-blur-md">
-              Chapter 01: The Cascade
-            </span>
+
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-nohemi font-bold text-white leading-tight tracking-tighter">
               The Cascading <br />
               <span className="text-glacier-teal italic font-normal text-2xl md:text-4xl lg:text-5xl">Reality of Ice Loss</span>
@@ -134,40 +189,62 @@ const CrisisPage = () => {
         </div>
       </section>
 
-      {/* 🏗️ The Cascade Effect Flow - Clean & Compact Layout */}
-      <section ref={containerRef} id="cascade-section" className="py-12 px-6 md:px-12 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="mb-10 text-center">
-            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-glacier-teal mb-2 block font-nohemi">The Systemic Breakdown</span>
-            <h2 className="text-2xl md:text-4xl font-nohemi font-bold text-glacier-navy tracking-tight">
-              The Cascading <span className="text-glacier-teal italic font-normal">Realities</span>
-            </h2>
+      {/* 🏗️ The Cascade Effect Flow - Responsive Bento Grid Layout */}
+      <section ref={containerRef} id="cascade-section" className="min-h-screen w-full py-16 px-6 md:px-12 relative bg-glacier-offwhite overflow-hidden flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto w-full flex flex-col relative z-10">
+          {/* Header */}
+          <div className="mb-10 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-glacier-teal mb-3 block font-nohemi">The Systemic Breakdown</span>
+              <h2 className="text-3xl md:text-5xl font-nohemi font-bold text-glacier-navy tracking-tight leading-none">
+                The Cascading <span className="text-glacier-teal italic font-normal">Realities</span>
+              </h2>
+            </div>
+            <p className="text-glacier-warmGrey text-sm md:text-base font-cabin max-w-md">
+              A deeply interconnected chain reaction. The loss of ice triggers irreversible shifts across the entire global ecosystem.
+            </p>
           </div>
 
-          <div className="space-y-3 relative">
-            {/* Thread Progress Bar Line */}
-            <div className="absolute left-[1.75rem] md:left-1/2 top-0 w-[1px] h-full bg-glacier-navy/10 -translate-x-1/2 hidden md:block" />
+          {/* Grid Layout - Flows naturally without squishing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            {detailedCascade.map((step, index) => {
+              // 3x3 layout: Index 0 takes 2x2, others take 1x1
+              let spanClass = index === 0 ? "md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2" : "col-span-1 row-span-1";
 
-            {detailedCascade.map((step, index) => (
-              <div
-                key={index}
-                className={`cascade-card relative flex flex-col md:flex-row gap-4 md:gap-8 items-center opacity-0 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
-              >
-                {/* Visual Tracker Marker Badge */}
-                <div className="z-10 w-9 h-9 rounded-xl bg-white flex-shrink-0 flex items-center justify-center text-glacier-teal font-nohemi text-sm border border-glacier-light shadow-sm transition-all duration-300">
-                  {index + 1}
-                </div>
+              return (
+                <div
+                  key={index}
+                  className={`cascade-card flex flex-col bg-white p-4 rounded-[1.5rem] md:rounded-[2rem] border border-glacier-light/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500 w-full group overflow-hidden relative ${spanClass}`}
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-glacier-teal/5 to-transparent rounded-bl-full -z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10 flex flex-col h-full min-h-0">
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="w-8 h-8 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-glacier-teal font-nohemi text-xs font-bold shadow-sm flex-shrink-0">
+                        0{index + 1}
+                      </div>
+                      <p className={`font-bold text-[8px] md:text-[9px] uppercase tracking-wider px-2 py-1 rounded-full whitespace-nowrap truncate ml-2 flex-shrink-0 ${step.type === 'decrease' ? 'text-blue-600 bg-blue-50' : 'text-red-600 bg-red-50'}`}>
+                        {step.data}
+                      </p>
+                    </div>
 
-                {/* Content Box */}
-                <div className={`flex-1 bg-white p-5 rounded-2xl border border-glacier-light/60 shadow-sm hover:border-glacier-teal/20 transition-all duration-300 w-full ${index % 2 !== 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <div className={`flex flex-col ${index % 2 !== 0 ? 'md:items-end' : 'md:items-start'} mb-1.5`}>
-                    <h3 className="font-nohemi text-lg font-bold text-glacier-navy tracking-tight leading-none mb-1">{step.title}</h3>
-                    <p className="text-glacier-crimson font-bold text-[9px] uppercase tracking-wider bg-glacier-crimson/5 px-2.5 py-0.5 rounded-full w-fit">{step.data}</p>
+                    <div className="mb-4">
+                      <h3 className="font-nohemi text-xl md:text-2xl font-bold text-glacier-navy tracking-tight mb-2 group-hover:text-glacier-teal transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-glacier-warmGrey text-sm font-cabin leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
+                    
+                    {/* React Graph Animated on Scroll */}
+                    <div className={`w-full ${index === 0 ? 'flex-1 mt-6 min-h-[150px]' : 'h-28 mt-auto'}`}>
+                      <ScrollAnimatedChart data={step.chartData} color={step.chartColor} className="h-full w-full p-1" />
+                    </div>
                   </div>
-                  <p className="text-glacier-warmGrey text-xs md:text-sm font-cabin leading-relaxed">{step.desc}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

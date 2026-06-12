@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { InstitutionalPartners } from "@/components/InstitutionalPartners";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,6 +156,8 @@ export default function PartnerPage() {
             ))}
           </div>
         </section>
+
+        <InstitutionalPartners/>
 
         {/* Dense Partnership Types Grid */}
         <section className="px-6 md:px-12 max-w-6xl mx-auto mb-12">

@@ -95,8 +95,6 @@ export default function HomePage() {
       {/* section 5 */}
       <ProgramsSnapshot />
 
-      {/* Institutional Partners */}
-      <InstitutionalPartners />
 
       {/* Movement CTA Strip */}
       <section className="w-full bg-glacier-navy py-16 px-6 text-center relative overflow-hidden border-b border-b-white/10">
